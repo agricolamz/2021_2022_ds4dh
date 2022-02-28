@@ -124,6 +124,28 @@ code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
 
 <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
@@ -202,6 +224,28 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="3.10" data-path="strings.html"><a href="strings.html#расстояния-между-строками"><i class="fa fa-check"></i><b>3.10</b> Расстояния между строками</a></li>
 <li class="chapter" data-level="3.11" data-path="strings.html"><a href="strings.html#дополнительные-задания"><i class="fa fa-check"></i><b>3.11</b> Дополнительные задания:</a></li>
 </ul></li>
+<li class="chapter" data-level="4" data-path="data_presentation.html"><a href="data_presentation.html"><i class="fa fa-check"></i><b>4</b> Представление данных: <code>rmarkdown</code></a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="data_presentation.html"><a href="data_presentation.html#rmarkdown"><i class="fa fa-check"></i><b>4.1</b> <code>rmarkdown</code></a>
+<ul>
+<li class="chapter" data-level="4.1.1" data-path="data_presentation.html"><a href="data_presentation.html#установка"><i class="fa fa-check"></i><b>4.1.1</b> Установка</a></li>
+<li class="chapter" data-level="4.1.2" data-path="data_presentation.html"><a href="data_presentation.html#составляющие-rmarkdown-документа"><i class="fa fa-check"></i><b>4.1.2</b> Составляющие <code>rmarkdown</code>-документа</a></li>
+<li class="chapter" data-level="4.1.3" data-path="data_presentation.html"><a href="data_presentation.html#пример-rmarkdown-документа"><i class="fa fa-check"></i><b>4.1.3</b> Пример <code>rmarkdown</code>-документа</a></li>
+<li class="chapter" data-level="4.1.4" data-path="data_presentation.html"><a href="data_presentation.html#markdown"><i class="fa fa-check"></i><b>4.1.4</b> <code>Markdown</code></a></li>
+<li class="chapter" data-level="4.1.5" data-path="data_presentation.html"><a href="data_presentation.html#pandoc"><i class="fa fa-check"></i><b>4.1.5</b> <code>Pandoc</code></a></li>
+<li class="chapter" data-level="4.1.6" data-path="data_presentation.html"><a href="data_presentation.html#code-chunks"><i class="fa fa-check"></i><b>4.1.6</b> Code chunks</a></li>
+<li class="chapter" data-level="4.1.7" data-path="data_presentation.html"><a href="data_presentation.html#yaml-шапка"><i class="fa fa-check"></i><b>4.1.7</b> YAML шапка</a></li>
+<li class="chapter" data-level="4.1.8" data-path="data_presentation.html"><a href="data_presentation.html#где-хостить-.html"><i class="fa fa-check"></i><b>4.1.8</b> Где хостить <code>.html</code>?</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="data_presentation.html"><a href="data_presentation.html#бывают-и-другие-способы-представления-данных"><i class="fa fa-check"></i><b>4.2</b> Бывают и другие способы представления данных</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="работа-с-текстами-gutenbergr-tidytext-stopwords.html"><a href="работа-с-текстами-gutenbergr-tidytext-stopwords.html"><i class="fa fa-check"></i><b>5</b> Работа с текстами: <code>gutenbergr</code>, <code>tidytext</code>, <code>stopwords</code></a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="работа-с-текстами-gutenbergr-tidytext-stopwords.html"><a href="работа-с-текстами-gutenbergr-tidytext-stopwords.html#загрузка-текста-в-r"><i class="fa fa-check"></i><b>5.1</b> Загрузка текста в R</a></li>
+<li class="chapter" data-level="5.2" data-path="работа-с-текстами-gutenbergr-tidytext-stopwords.html"><a href="работа-с-текстами-gutenbergr-tidytext-stopwords.html#пакет-gutenbergr"><i class="fa fa-check"></i><b>5.2</b> Пакет <code>gutenbergr</code></a></li>
+<li class="chapter" data-level="5.3" data-path="работа-с-текстами-gutenbergr-tidytext-stopwords.html"><a href="работа-с-текстами-gutenbergr-tidytext-stopwords.html#библиотека-tidytext"><i class="fa fa-check"></i><b>5.3</b> Библиотека <code>tidytext</code></a></li>
+<li class="chapter" data-level="5.4" data-path="работа-с-текстами-gutenbergr-tidytext-stopwords.html"><a href="работа-с-текстами-gutenbergr-tidytext-stopwords.html#пакет-stopwords"><i class="fa fa-check"></i><b>5.4</b> Пакет <code>stopwords</code></a></li>
+</ul></li>
 <li class="chapter" data-level="" data-path="ссылки-на-литературу.html"><a href="ссылки-на-литературу.html"><i class="fa fa-check"></i>Ссылки на литературу</a></li>
 </ul>
 
@@ -277,6 +321,20 @@ gitbook.start({
 });
 </script>
 
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
 </body>
 
 </html>
