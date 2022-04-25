@@ -31,7 +31,7 @@
   
   
 <link rel="prev" href="работа-с-текстами-gutenbergr-tidytext-stopwords.html"/>
-<link rel="next" href="ссылки-на-литературу.html"/>
+<link rel="next" href="работа-с-геоданными-leaflet.html"/>
 <script src="libs/header-attrs-2.12/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
@@ -58,6 +58,16 @@
 <script src="libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
 <link href="libs/str_view-0.1.0/str_view.css" rel="stylesheet" />
 <script src="libs/str_view-binding-1.4.0/str_view.js"></script>
+<link href="libs/leaflet-1.3.1/leaflet.css" rel="stylesheet" />
+<script src="libs/leaflet-1.3.1/leaflet.js"></script>
+<link href="libs/leafletfix-1.0.0/leafletfix.css" rel="stylesheet" />
+<script src="libs/proj4-2.6.2/proj4.min.js"></script>
+<script src="libs/Proj4Leaflet-1.0.1/proj4leaflet.js"></script>
+<link href="libs/rstudio_leaflet-1.3.1/rstudio_leaflet.css" rel="stylesheet" />
+<script src="libs/leaflet-binding-2.1.0/leaflet.js"></script>
+<script src="libs/leaflet-providers-1.9.0/leaflet-providers_1.9.0.js"></script>
+<script src="libs/leaflet-providers-plugin-2.1.0/leaflet-providers-plugin.js"></script>
+<script src="libs/Leaflet.Sync-0.0.5/L.Map.Sync.js"></script>
 
 
 <style type="text/css">
@@ -254,6 +264,17 @@ div.csl-indent {
 <li class="chapter" data-level="6.3" data-path="работа-со-временем-lubridate.html"><a href="работа-со-временем-lubridate.html#операции-с-датами"><i class="fa fa-check"></i><b>6.3</b> Операции с датами<span></span></a></li>
 <li class="chapter" data-level="6.4" data-path="работа-со-временем-lubridate.html"><a href="работа-со-временем-lubridate.html#визуализация-времени-данные-левада-центра"><i class="fa fa-check"></i><b>6.4</b> Визуализация времени: данные Левада-центра<span></span></a></li>
 </ul></li>
+<li class="chapter" data-level="7" data-path="работа-с-геоданными-leaflet.html"><a href="работа-с-геоданными-leaflet.html"><i class="fa fa-check"></i><b>7</b> Работа с геоданными: <code>leaflet</code><span></span></a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="работа-с-геоданными-leaflet.html"><a href="работа-с-геоданными-leaflet.html#векторная-и-растровая-графика"><i class="fa fa-check"></i><b>7.1</b> Векторная и растровая графика<span></span></a></li>
+<li class="chapter" data-level="7.2" data-path="работа-с-геоданными-leaflet.html"><a href="работа-с-геоданными-leaflet.html#картографические-примитивы"><i class="fa fa-check"></i><b>7.2</b> Картографические примитивы<span></span></a></li>
+<li class="chapter" data-level="7.3" data-path="работа-с-геоданными-leaflet.html"><a href="работа-с-геоданными-leaflet.html#leaflet"><i class="fa fa-check"></i><b>7.3</b> <code>leaflet</code><span></span></a>
+<ul>
+<li class="chapter" data-level="7.3.1" data-path="работа-с-геоданными-leaflet.html"><a href="работа-с-геоданными-leaflet.html#csv-файлы"><i class="fa fa-check"></i><b>7.3.1</b> <code>.csv</code> файлы<span></span></a></li>
+<li class="chapter" data-level="7.3.2" data-path="работа-с-геоданными-leaflet.html"><a href="работа-с-геоданными-leaflet.html#комбинация-карт-leafsync"><i class="fa fa-check"></i><b>7.3.2</b> Комбинация карт: <code>leafsync</code><span></span></a></li>
+<li class="chapter" data-level="7.3.3" data-path="работа-с-геоданными-leaflet.html"><a href="работа-с-геоданными-leaflet.html#работа-с-.geojson"><i class="fa fa-check"></i><b>7.3.3</b> Работа с <code>.geojson</code><span></span></a></li>
+</ul></li>
+</ul></li>
 <li><a href="ссылки-на-литературу.html#ссылки-на-литературу">Ссылки на литературу<span></span></a></li>
 </ul>
 
@@ -291,9 +312,9 @@ Attaching package: &#39;lubridate&#39;</code></pre>
 
     date, intersect, setdiff, union</code></pre>
 <div class="sourceCode" id="cb345"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb345-1"><a href="работа-со-временем-lubridate.html#cb345-1" aria-hidden="true" tabindex="-1"></a><span class="fu">today</span>()</span></code></pre></div>
-<pre><code>[1] &quot;2022-04-04&quot;</code></pre>
+<pre><code>[1] &quot;2022-04-25&quot;</code></pre>
 <div class="sourceCode" id="cb347"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb347-1"><a href="работа-со-временем-lubridate.html#cb347-1" aria-hidden="true" tabindex="-1"></a><span class="fu">now</span>()</span></code></pre></div>
-<pre><code>[1] &quot;2022-04-04 18:48:54 MSK&quot;</code></pre>
+<pre><code>[1] &quot;2022-04-25 18:09:07 MSK&quot;</code></pre>
 <p>Как видно, из этих функций в R можно работать как с датами, так и с временем. В качестве иллюстрации мы будем использовать датасет <code>flights</code> из пакета <code>nycflights13</code>, в котором содержатся данные полетов из Нью Йорка в 2013 года.</p>
 <div class="sourceCode" id="cb349"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb349-1"><a href="работа-со-временем-lubridate.html#cb349-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(nycflights13)</span>
 <span id="cb349-2"><a href="работа-со-временем-lubridate.html#cb349-2" aria-hidden="true" tabindex="-1"></a>flights</span></code></pre></div>
@@ -531,7 +552,7 @@ href="https://raw.githubusercontent.com/agricolamz/DS_for_DH/master/data/visa_qu
         </div>
       </div>
 <a href="работа-с-текстами-gutenbergr-tidytext-stopwords.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="ссылки-на-литературу.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="работа-с-геоданными-leaflet.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
