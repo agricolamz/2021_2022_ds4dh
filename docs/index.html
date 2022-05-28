@@ -6,11 +6,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Наука о данных в R для программы Цифровых гуманитарных исследований</title>
   <meta name="description" content="Наука о данных в R для программы Цифровых гуманитарных исследований" />
-  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.26 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Наука о данных в R для программы Цифровых гуманитарных исследований" />
   <meta property="og:type" content="book" />
-  
   
   
   
@@ -32,7 +31,6 @@
   
 
 <link rel="next" href="viz_1.html"/>
-<script src="libs/header-attrs-2.12/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -64,9 +62,9 @@
 <script src="libs/proj4-2.6.2/proj4.min.js"></script>
 <script src="libs/Proj4Leaflet-1.0.1/proj4leaflet.js"></script>
 <link href="libs/rstudio_leaflet-1.3.1/rstudio_leaflet.css" rel="stylesheet" />
-<script src="libs/leaflet-binding-2.1.0/leaflet.js"></script>
+<script src="libs/leaflet-binding-2.1.1/leaflet.js"></script>
 <script src="libs/leaflet-providers-1.9.0/leaflet-providers_1.9.0.js"></script>
-<script src="libs/leaflet-providers-plugin-2.1.0/leaflet-providers-plugin.js"></script>
+<script src="libs/leaflet-providers-plugin-2.1.1/leaflet-providers-plugin.js"></script>
 <script src="libs/Leaflet.Sync-0.0.5/L.Map.Sync.js"></script>
 
 
@@ -174,108 +172,186 @@ div.csl-indent {
 <li><a href="./">Наука о данных в R для ЦГИ</a></li>
 
 <li class="divider"></li>
-<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> О курсе<span></span></a></li>
-<li class="chapter" data-level="2" data-path="viz_1.html"><a href="viz_1.html"><i class="fa fa-check"></i><b>2</b> Визуализация данных<span></span></a>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> О курсе</a></li>
+<li class="chapter" data-level="2" data-path="viz_1.html"><a href="viz_1.html"><i class="fa fa-check"></i><b>2</b> Визуализация данных</a>
 <ul>
-<li class="chapter" data-level="2.1" data-path="viz_1.html"><a href="viz_1.html#зачем-визуализировать-данные"><i class="fa fa-check"></i><b>2.1</b> Зачем визуализировать данные?<span></span></a>
+<li class="chapter" data-level="2.1" data-path="viz_1.html"><a href="viz_1.html#зачем-визуализировать-данные"><i class="fa fa-check"></i><b>2.1</b> Зачем визуализировать данные?</a>
 <ul>
-<li class="chapter" data-level="2.1.1" data-path="viz_1.html"><a href="viz_1.html#квартет-анскомба"><i class="fa fa-check"></i><b>2.1.1</b> Квартет Анскомба<span></span></a></li>
-<li class="chapter" data-level="2.1.2" data-path="viz_1.html"><a href="viz_1.html#датазаурус"><i class="fa fa-check"></i><b>2.1.2</b> Датазаурус<span></span></a></li>
+<li class="chapter" data-level="2.1.1" data-path="viz_1.html"><a href="viz_1.html#квартет-анскомба"><i class="fa fa-check"></i><b>2.1.1</b> Квартет Анскомба</a></li>
+<li class="chapter" data-level="2.1.2" data-path="viz_1.html"><a href="viz_1.html#датазаурус"><i class="fa fa-check"></i><b>2.1.2</b> Датазаурус</a></li>
 </ul></li>
-<li class="chapter" data-level="2.2" data-path="viz_1.html"><a href="viz_1.html#основы-ggplot2"><i class="fa fa-check"></i><b>2.2</b> Основы <code>ggplot2</code><span></span></a>
+<li class="chapter" data-level="2.2" data-path="viz_1.html"><a href="viz_1.html#основы-ggplot2"><i class="fa fa-check"></i><b>2.2</b> Основы <code>ggplot2</code></a>
 <ul>
-<li class="chapter" data-level="2.2.1" data-path="viz_1.html"><a href="viz_1.html#диаграмма-рассеяния-scaterplot"><i class="fa fa-check"></i><b>2.2.1</b> Диаграмма рассеяния (Scaterplot)<span></span></a></li>
-<li class="chapter" data-level="2.2.2" data-path="viz_1.html"><a href="viz_1.html#слои"><i class="fa fa-check"></i><b>2.2.2</b> Слои<span></span></a></li>
-<li class="chapter" data-level="2.2.3" data-path="viz_1.html"><a href="viz_1.html#aes"><i class="fa fa-check"></i><b>2.2.3</b> <code>aes()</code><span></span></a></li>
-<li class="chapter" data-level="2.2.4" data-path="viz_1.html"><a href="viz_1.html#оформление"><i class="fa fa-check"></i><b>2.2.4</b> Оформление<span></span></a></li>
-<li class="chapter" data-level="2.2.5" data-path="viz_1.html"><a href="viz_1.html#логарифмические-шкалы"><i class="fa fa-check"></i><b>2.2.5</b> Логарифмические шкалы<span></span></a></li>
-<li class="chapter" data-level="2.2.6" data-path="viz_1.html"><a href="viz_1.html#annotate"><i class="fa fa-check"></i><b>2.2.6</b> <code>annotate()</code><span></span></a></li>
+<li class="chapter" data-level="2.2.1" data-path="viz_1.html"><a href="viz_1.html#диаграмма-рассеяния-scaterplot"><i class="fa fa-check"></i><b>2.2.1</b> Диаграмма рассеяния (Scaterplot)</a></li>
+<li class="chapter" data-level="2.2.2" data-path="viz_1.html"><a href="viz_1.html#слои"><i class="fa fa-check"></i><b>2.2.2</b> Слои</a></li>
+<li class="chapter" data-level="2.2.3" data-path="viz_1.html"><a href="viz_1.html#aes"><i class="fa fa-check"></i><b>2.2.3</b> <code>aes()</code></a></li>
+<li class="chapter" data-level="2.2.4" data-path="viz_1.html"><a href="viz_1.html#оформление"><i class="fa fa-check"></i><b>2.2.4</b> Оформление</a></li>
+<li class="chapter" data-level="2.2.5" data-path="viz_1.html"><a href="viz_1.html#логарифмические-шкалы"><i class="fa fa-check"></i><b>2.2.5</b> Логарифмические шкалы</a></li>
+<li class="chapter" data-level="2.2.6" data-path="viz_1.html"><a href="viz_1.html#annotate"><i class="fa fa-check"></i><b>2.2.6</b> <code>annotate()</code></a></li>
 </ul></li>
-<li class="chapter" data-level="2.3" data-path="viz_1.html"><a href="viz_1.html#столбчатые-диаграммы-barplots"><i class="fa fa-check"></i><b>2.3</b> Столбчатые диаграммы (barplots)<span></span></a></li>
-<li class="chapter" data-level="2.4" data-path="viz_1.html"><a href="viz_1.html#факторы"><i class="fa fa-check"></i><b>2.4</b> Факторы<span></span></a></li>
-<li class="chapter" data-level="2.5" data-path="viz_1.html"><a href="viz_1.html#дотплот"><i class="fa fa-check"></i><b>2.5</b> Дотплот<span></span></a></li>
-<li class="chapter" data-level="2.6" data-path="viz_1.html"><a href="viz_1.html#гистограммы"><i class="fa fa-check"></i><b>2.6</b> Гистограммы<span></span></a></li>
-<li class="chapter" data-level="2.7" data-path="viz_1.html"><a href="viz_1.html#функции-плотности"><i class="fa fa-check"></i><b>2.7</b> Функции плотности<span></span></a></li>
-<li class="chapter" data-level="2.8" data-path="viz_1.html"><a href="viz_1.html#точки-джиттер-jitter-вайолинплот-violinplot-ящики-с-усами-boxplot"><i class="fa fa-check"></i><b>2.8</b> Точки, джиттер (jitter), вайолинплот (violinplot), ящики с усами (boxplot),<span></span></a></li>
-<li class="chapter" data-level="2.9" data-path="viz_1.html"><a href="viz_1.html#фасетизация"><i class="fa fa-check"></i><b>2.9</b> Фасетизация<span></span></a></li>
-<li class="chapter" data-level="2.10" data-path="viz_1.html"><a href="viz_1.html#визуализация-комбинаций-признаков"><i class="fa fa-check"></i><b>2.10</b> Визуализация комбинаций признаков<span></span></a>
+<li class="chapter" data-level="2.3" data-path="viz_1.html"><a href="viz_1.html#столбчатые-диаграммы-barplots"><i class="fa fa-check"></i><b>2.3</b> Столбчатые диаграммы (barplots)</a></li>
+<li class="chapter" data-level="2.4" data-path="viz_1.html"><a href="viz_1.html#факторы"><i class="fa fa-check"></i><b>2.4</b> Факторы</a></li>
+<li class="chapter" data-level="2.5" data-path="viz_1.html"><a href="viz_1.html#дотплот"><i class="fa fa-check"></i><b>2.5</b> Дотплот</a></li>
+<li class="chapter" data-level="2.6" data-path="viz_1.html"><a href="viz_1.html#гистограммы"><i class="fa fa-check"></i><b>2.6</b> Гистограммы</a></li>
+<li class="chapter" data-level="2.7" data-path="viz_1.html"><a href="viz_1.html#функции-плотности"><i class="fa fa-check"></i><b>2.7</b> Функции плотности</a></li>
+<li class="chapter" data-level="2.8" data-path="viz_1.html"><a href="viz_1.html#точки-джиттер-jitter-вайолинплот-violinplot-ящики-с-усами-boxplot"><i class="fa fa-check"></i><b>2.8</b> Точки, джиттер (jitter), вайолинплот (violinplot), ящики с усами (boxplot),</a></li>
+<li class="chapter" data-level="2.9" data-path="viz_1.html"><a href="viz_1.html#фасетизация"><i class="fa fa-check"></i><b>2.9</b> Фасетизация</a></li>
+<li class="chapter" data-level="2.10" data-path="viz_1.html"><a href="viz_1.html#визуализация-комбинаций-признаков"><i class="fa fa-check"></i><b>2.10</b> Визуализация комбинаций признаков</a>
 <ul>
-<li class="chapter" data-level="2.10.1" data-path="viz_1.html"><a href="viz_1.html#потоковая-диаграмма-sankey-diagram"><i class="fa fa-check"></i><b>2.10.1</b> Потоковая Диаграмма (Sankey diagram)<span></span></a></li>
-<li class="chapter" data-level="2.10.2" data-path="viz_1.html"><a href="viz_1.html#upset-plot"><i class="fa fa-check"></i><b>2.10.2</b> UpSet Plot<span></span></a></li>
-</ul></li>
-</ul></li>
-<li class="chapter" data-level="3" data-path="strings.html"><a href="strings.html"><i class="fa fa-check"></i><b>3</b> Работа со строками<span></span></a>
-<ul>
-<li class="chapter" data-level="3.1" data-path="strings.html"><a href="strings.html#работа-со-строками-в-r"><i class="fa fa-check"></i><b>3.1</b> Работа со строками в R<span></span></a></li>
-<li class="chapter" data-level="3.2" data-path="strings.html"><a href="strings.html#как-получить-строку"><i class="fa fa-check"></i><b>3.2</b> Как получить строку?<span></span></a></li>
-<li class="chapter" data-level="3.3" data-path="strings.html"><a href="strings.html#соединение-и-разделение-строк"><i class="fa fa-check"></i><b>3.3</b> Соединение и разделение строк<span></span></a></li>
-<li class="chapter" data-level="3.4" data-path="strings.html"><a href="strings.html#количество-символов"><i class="fa fa-check"></i><b>3.4</b> Количество символов<span></span></a>
-<ul>
-<li class="chapter" data-level="3.4.1" data-path="strings.html"><a href="strings.html#подсчет-количества-символов"><i class="fa fa-check"></i><b>3.4.1</b> Подсчет количества символов<span></span></a></li>
-<li class="chapter" data-level="3.4.2" data-path="strings.html"><a href="strings.html#подгонка-количества-символов"><i class="fa fa-check"></i><b>3.4.2</b> Подгонка количества символов<span></span></a></li>
-</ul></li>
-<li class="chapter" data-level="3.5" data-path="strings.html"><a href="strings.html#сортировка"><i class="fa fa-check"></i><b>3.5</b> Сортировка<span></span></a></li>
-<li class="chapter" data-level="3.6" data-path="strings.html"><a href="strings.html#поиск-подстроки"><i class="fa fa-check"></i><b>3.6</b> Поиск подстроки<span></span></a></li>
-<li class="chapter" data-level="3.7" data-path="strings.html"><a href="strings.html#изменение-строк"><i class="fa fa-check"></i><b>3.7</b> Изменение строк<span></span></a>
-<ul>
-<li class="chapter" data-level="3.7.1" data-path="strings.html"><a href="strings.html#изменение-регистра"><i class="fa fa-check"></i><b>3.7.1</b> Изменение регистра<span></span></a></li>
-<li class="chapter" data-level="3.7.2" data-path="strings.html"><a href="strings.html#выделение-подстроки"><i class="fa fa-check"></i><b>3.7.2</b> Выделение подстроки<span></span></a></li>
-<li class="chapter" data-level="3.7.3" data-path="strings.html"><a href="strings.html#замена-подстроки"><i class="fa fa-check"></i><b>3.7.3</b> Замена подстроки<span></span></a></li>
-<li class="chapter" data-level="3.7.4" data-path="strings.html"><a href="strings.html#удаление-подстроки"><i class="fa fa-check"></i><b>3.7.4</b> Удаление подстроки<span></span></a></li>
-<li class="chapter" data-level="3.7.5" data-path="strings.html"><a href="strings.html#транслитерация-строк"><i class="fa fa-check"></i><b>3.7.5</b> Транслитерация строк<span></span></a></li>
-</ul></li>
-<li class="chapter" data-level="3.8" data-path="strings.html"><a href="strings.html#регулярные-выражения"><i class="fa fa-check"></i><b>3.8</b> Регулярные выражения<span></span></a>
-<ul>
-<li class="chapter" data-level="3.8.1" data-path="strings.html"><a href="strings.html#экранирование-метасимволов"><i class="fa fa-check"></i><b>3.8.1</b> Экранирование метасимволов<span></span></a></li>
-<li class="chapter" data-level="3.8.2" data-path="strings.html"><a href="strings.html#классы-знаков"><i class="fa fa-check"></i><b>3.8.2</b> Классы знаков<span></span></a></li>
-<li class="chapter" data-level="3.8.3" data-path="strings.html"><a href="strings.html#квантификация"><i class="fa fa-check"></i><b>3.8.3</b> Квантификация<span></span></a></li>
-<li class="chapter" data-level="3.8.4" data-path="strings.html"><a href="strings.html#позиционная-проверка-look-arounds"><i class="fa fa-check"></i><b>3.8.4</b> Позиционная проверка (look arounds)<span></span></a></li>
-</ul></li>
-<li class="chapter" data-level="3.9" data-path="strings.html"><a href="strings.html#определение-языка"><i class="fa fa-check"></i><b>3.9</b> Определение языка<span></span></a></li>
-<li class="chapter" data-level="3.10" data-path="strings.html"><a href="strings.html#расстояния-между-строками"><i class="fa fa-check"></i><b>3.10</b> Расстояния между строками<span></span></a></li>
-<li class="chapter" data-level="3.11" data-path="strings.html"><a href="strings.html#дополнительные-задания"><i class="fa fa-check"></i><b>3.11</b> Дополнительные задания:<span></span></a></li>
-</ul></li>
-<li class="chapter" data-level="4" data-path="data_presentation.html"><a href="data_presentation.html"><i class="fa fa-check"></i><b>4</b> Представление данных: <code>rmarkdown</code><span></span></a>
-<ul>
-<li class="chapter" data-level="4.1" data-path="data_presentation.html"><a href="data_presentation.html#rmarkdown"><i class="fa fa-check"></i><b>4.1</b> <code>rmarkdown</code><span></span></a>
-<ul>
-<li class="chapter" data-level="4.1.1" data-path="data_presentation.html"><a href="data_presentation.html#установка"><i class="fa fa-check"></i><b>4.1.1</b> Установка<span></span></a></li>
-<li class="chapter" data-level="4.1.2" data-path="data_presentation.html"><a href="data_presentation.html#составляющие-rmarkdown-документа"><i class="fa fa-check"></i><b>4.1.2</b> Составляющие <code>rmarkdown</code>-документа<span></span></a></li>
-<li class="chapter" data-level="4.1.3" data-path="data_presentation.html"><a href="data_presentation.html#пример-rmarkdown-документа"><i class="fa fa-check"></i><b>4.1.3</b> Пример <code>rmarkdown</code>-документа<span></span></a></li>
-<li class="chapter" data-level="4.1.4" data-path="data_presentation.html"><a href="data_presentation.html#markdown"><i class="fa fa-check"></i><b>4.1.4</b> <code>Markdown</code><span></span></a></li>
-<li class="chapter" data-level="4.1.5" data-path="data_presentation.html"><a href="data_presentation.html#pandoc"><i class="fa fa-check"></i><b>4.1.5</b> <code>Pandoc</code><span></span></a></li>
-<li class="chapter" data-level="4.1.6" data-path="data_presentation.html"><a href="data_presentation.html#code-chunks"><i class="fa fa-check"></i><b>4.1.6</b> Code chunks<span></span></a></li>
-<li class="chapter" data-level="4.1.7" data-path="data_presentation.html"><a href="data_presentation.html#yaml-шапка"><i class="fa fa-check"></i><b>4.1.7</b> YAML шапка<span></span></a></li>
-<li class="chapter" data-level="4.1.8" data-path="data_presentation.html"><a href="data_presentation.html#где-хостить-.html"><i class="fa fa-check"></i><b>4.1.8</b> Где хостить <code>.html</code>?<span></span></a></li>
-</ul></li>
-<li class="chapter" data-level="4.2" data-path="data_presentation.html"><a href="data_presentation.html#бывают-и-другие-способы-представления-данных"><i class="fa fa-check"></i><b>4.2</b> Бывают и другие способы представления данных<span></span></a></li>
-</ul></li>
-<li class="chapter" data-level="5" data-path="работа-с-текстами-gutenbergr-tidytext-stopwords.html"><a href="работа-с-текстами-gutenbergr-tidytext-stopwords.html"><i class="fa fa-check"></i><b>5</b> Работа с текстами: <code>gutenbergr</code>, <code>tidytext</code>, <code>stopwords</code><span></span></a>
-<ul>
-<li class="chapter" data-level="5.1" data-path="работа-с-текстами-gutenbergr-tidytext-stopwords.html"><a href="работа-с-текстами-gutenbergr-tidytext-stopwords.html#загрузка-текста-в-r"><i class="fa fa-check"></i><b>5.1</b> Загрузка текста в R<span></span></a></li>
-<li class="chapter" data-level="5.2" data-path="работа-с-текстами-gutenbergr-tidytext-stopwords.html"><a href="работа-с-текстами-gutenbergr-tidytext-stopwords.html#пакет-gutenbergr"><i class="fa fa-check"></i><b>5.2</b> Пакет <code>gutenbergr</code><span></span></a></li>
-<li class="chapter" data-level="5.3" data-path="работа-с-текстами-gutenbergr-tidytext-stopwords.html"><a href="работа-с-текстами-gutenbergr-tidytext-stopwords.html#библиотека-tidytext"><i class="fa fa-check"></i><b>5.3</b> Библиотека <code>tidytext</code><span></span></a></li>
-<li class="chapter" data-level="5.4" data-path="работа-с-текстами-gutenbergr-tidytext-stopwords.html"><a href="работа-с-текстами-gutenbergr-tidytext-stopwords.html#пакет-stopwords"><i class="fa fa-check"></i><b>5.4</b> Пакет <code>stopwords</code><span></span></a></li>
-</ul></li>
-<li class="chapter" data-level="6" data-path="работа-со-временем-lubridate.html"><a href="работа-со-временем-lubridate.html"><i class="fa fa-check"></i><b>6</b> Работа со временем: <code>lubridate</code><span></span></a>
-<ul>
-<li class="chapter" data-level="6.1" data-path="работа-со-временем-lubridate.html"><a href="работа-со-временем-lubridate.html#создание-даты"><i class="fa fa-check"></i><b>6.1</b> Создание даты<span></span></a></li>
-<li class="chapter" data-level="6.2" data-path="работа-со-временем-lubridate.html"><a href="работа-со-временем-lubridate.html#извлечение-компонентов-даты"><i class="fa fa-check"></i><b>6.2</b> Извлечение компонентов даты<span></span></a></li>
-<li class="chapter" data-level="6.3" data-path="работа-со-временем-lubridate.html"><a href="работа-со-временем-lubridate.html#операции-с-датами"><i class="fa fa-check"></i><b>6.3</b> Операции с датами<span></span></a></li>
-<li class="chapter" data-level="6.4" data-path="работа-со-временем-lubridate.html"><a href="работа-со-временем-lubridate.html#визуализация-времени-данные-левада-центра"><i class="fa fa-check"></i><b>6.4</b> Визуализация времени: данные Левада-центра<span></span></a></li>
-</ul></li>
-<li class="chapter" data-level="7" data-path="работа-с-геоданными-leaflet.html"><a href="работа-с-геоданными-leaflet.html"><i class="fa fa-check"></i><b>7</b> Работа с геоданными: <code>leaflet</code><span></span></a>
-<ul>
-<li class="chapter" data-level="7.1" data-path="работа-с-геоданными-leaflet.html"><a href="работа-с-геоданными-leaflet.html#векторная-и-растровая-графика"><i class="fa fa-check"></i><b>7.1</b> Векторная и растровая графика<span></span></a></li>
-<li class="chapter" data-level="7.2" data-path="работа-с-геоданными-leaflet.html"><a href="работа-с-геоданными-leaflet.html#картографические-примитивы"><i class="fa fa-check"></i><b>7.2</b> Картографические примитивы<span></span></a></li>
-<li class="chapter" data-level="7.3" data-path="работа-с-геоданными-leaflet.html"><a href="работа-с-геоданными-leaflet.html#leaflet"><i class="fa fa-check"></i><b>7.3</b> <code>leaflet</code><span></span></a>
-<ul>
-<li class="chapter" data-level="7.3.1" data-path="работа-с-геоданными-leaflet.html"><a href="работа-с-геоданными-leaflet.html#csv-файлы"><i class="fa fa-check"></i><b>7.3.1</b> <code>.csv</code> файлы<span></span></a></li>
-<li class="chapter" data-level="7.3.2" data-path="работа-с-геоданными-leaflet.html"><a href="работа-с-геоданными-leaflet.html#комбинация-карт-leafsync"><i class="fa fa-check"></i><b>7.3.2</b> Комбинация карт: <code>leafsync</code><span></span></a></li>
-<li class="chapter" data-level="7.3.3" data-path="работа-с-геоданными-leaflet.html"><a href="работа-с-геоданными-leaflet.html#работа-с-.geojson"><i class="fa fa-check"></i><b>7.3.3</b> Работа с <code>.geojson</code><span></span></a></li>
+<li class="chapter" data-level="2.10.1" data-path="viz_1.html"><a href="viz_1.html#потоковая-диаграмма-sankey-diagram"><i class="fa fa-check"></i><b>2.10.1</b> Потоковая Диаграмма (Sankey diagram)</a></li>
+<li class="chapter" data-level="2.10.2" data-path="viz_1.html"><a href="viz_1.html#upset-plot"><i class="fa fa-check"></i><b>2.10.2</b> UpSet Plot</a></li>
 </ul></li>
 </ul></li>
-<li><a href="ссылки-на-литературу.html#ссылки-на-литературу">Ссылки на литературу<span></span></a></li>
+<li class="chapter" data-level="3" data-path="strings.html"><a href="strings.html"><i class="fa fa-check"></i><b>3</b> Работа со строками</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="strings.html"><a href="strings.html#работа-со-строками-в-r"><i class="fa fa-check"></i><b>3.1</b> Работа со строками в R</a></li>
+<li class="chapter" data-level="3.2" data-path="strings.html"><a href="strings.html#как-получить-строку"><i class="fa fa-check"></i><b>3.2</b> Как получить строку?</a></li>
+<li class="chapter" data-level="3.3" data-path="strings.html"><a href="strings.html#соединение-и-разделение-строк"><i class="fa fa-check"></i><b>3.3</b> Соединение и разделение строк</a></li>
+<li class="chapter" data-level="3.4" data-path="strings.html"><a href="strings.html#количество-символов"><i class="fa fa-check"></i><b>3.4</b> Количество символов</a>
+<ul>
+<li class="chapter" data-level="3.4.1" data-path="strings.html"><a href="strings.html#подсчет-количества-символов"><i class="fa fa-check"></i><b>3.4.1</b> Подсчет количества символов</a></li>
+<li class="chapter" data-level="3.4.2" data-path="strings.html"><a href="strings.html#подгонка-количества-символов"><i class="fa fa-check"></i><b>3.4.2</b> Подгонка количества символов</a></li>
+</ul></li>
+<li class="chapter" data-level="3.5" data-path="strings.html"><a href="strings.html#сортировка"><i class="fa fa-check"></i><b>3.5</b> Сортировка</a></li>
+<li class="chapter" data-level="3.6" data-path="strings.html"><a href="strings.html#поиск-подстроки"><i class="fa fa-check"></i><b>3.6</b> Поиск подстроки</a></li>
+<li class="chapter" data-level="3.7" data-path="strings.html"><a href="strings.html#изменение-строк"><i class="fa fa-check"></i><b>3.7</b> Изменение строк</a>
+<ul>
+<li class="chapter" data-level="3.7.1" data-path="strings.html"><a href="strings.html#изменение-регистра"><i class="fa fa-check"></i><b>3.7.1</b> Изменение регистра</a></li>
+<li class="chapter" data-level="3.7.2" data-path="strings.html"><a href="strings.html#выделение-подстроки"><i class="fa fa-check"></i><b>3.7.2</b> Выделение подстроки</a></li>
+<li class="chapter" data-level="3.7.3" data-path="strings.html"><a href="strings.html#замена-подстроки"><i class="fa fa-check"></i><b>3.7.3</b> Замена подстроки</a></li>
+<li class="chapter" data-level="3.7.4" data-path="strings.html"><a href="strings.html#удаление-подстроки"><i class="fa fa-check"></i><b>3.7.4</b> Удаление подстроки</a></li>
+<li class="chapter" data-level="3.7.5" data-path="strings.html"><a href="strings.html#транслитерация-строк"><i class="fa fa-check"></i><b>3.7.5</b> Транслитерация строк</a></li>
+</ul></li>
+<li class="chapter" data-level="3.8" data-path="strings.html"><a href="strings.html#регулярные-выражения"><i class="fa fa-check"></i><b>3.8</b> Регулярные выражения</a>
+<ul>
+<li class="chapter" data-level="3.8.1" data-path="strings.html"><a href="strings.html#экранирование-метасимволов"><i class="fa fa-check"></i><b>3.8.1</b> Экранирование метасимволов</a></li>
+<li class="chapter" data-level="3.8.2" data-path="strings.html"><a href="strings.html#классы-знаков"><i class="fa fa-check"></i><b>3.8.2</b> Классы знаков</a></li>
+<li class="chapter" data-level="3.8.3" data-path="strings.html"><a href="strings.html#квантификация"><i class="fa fa-check"></i><b>3.8.3</b> Квантификация</a></li>
+<li class="chapter" data-level="3.8.4" data-path="strings.html"><a href="strings.html#позиционная-проверка-look-arounds"><i class="fa fa-check"></i><b>3.8.4</b> Позиционная проверка (look arounds)</a></li>
+</ul></li>
+<li class="chapter" data-level="3.9" data-path="strings.html"><a href="strings.html#определение-языка"><i class="fa fa-check"></i><b>3.9</b> Определение языка</a></li>
+<li class="chapter" data-level="3.10" data-path="strings.html"><a href="strings.html#расстояния-между-строками"><i class="fa fa-check"></i><b>3.10</b> Расстояния между строками</a></li>
+<li class="chapter" data-level="3.11" data-path="strings.html"><a href="strings.html#дополнительные-задания"><i class="fa fa-check"></i><b>3.11</b> Дополнительные задания:</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="data_presentation.html"><a href="data_presentation.html"><i class="fa fa-check"></i><b>4</b> Представление данных: <code>rmarkdown</code></a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="data_presentation.html"><a href="data_presentation.html#rmarkdown"><i class="fa fa-check"></i><b>4.1</b> <code>rmarkdown</code></a>
+<ul>
+<li class="chapter" data-level="4.1.1" data-path="data_presentation.html"><a href="data_presentation.html#установка"><i class="fa fa-check"></i><b>4.1.1</b> Установка</a></li>
+<li class="chapter" data-level="4.1.2" data-path="data_presentation.html"><a href="data_presentation.html#составляющие-rmarkdown-документа"><i class="fa fa-check"></i><b>4.1.2</b> Составляющие <code>rmarkdown</code>-документа</a></li>
+<li class="chapter" data-level="4.1.3" data-path="data_presentation.html"><a href="data_presentation.html#пример-rmarkdown-документа"><i class="fa fa-check"></i><b>4.1.3</b> Пример <code>rmarkdown</code>-документа</a></li>
+<li class="chapter" data-level="4.1.4" data-path="data_presentation.html"><a href="data_presentation.html#markdown"><i class="fa fa-check"></i><b>4.1.4</b> <code>Markdown</code></a></li>
+<li class="chapter" data-level="4.1.5" data-path="data_presentation.html"><a href="data_presentation.html#pandoc"><i class="fa fa-check"></i><b>4.1.5</b> <code>Pandoc</code></a></li>
+<li class="chapter" data-level="4.1.6" data-path="data_presentation.html"><a href="data_presentation.html#code-chunks"><i class="fa fa-check"></i><b>4.1.6</b> Code chunks</a></li>
+<li class="chapter" data-level="4.1.7" data-path="data_presentation.html"><a href="data_presentation.html#yaml-шапка"><i class="fa fa-check"></i><b>4.1.7</b> YAML шапка</a></li>
+<li class="chapter" data-level="4.1.8" data-path="data_presentation.html"><a href="data_presentation.html#где-хостить-.html"><i class="fa fa-check"></i><b>4.1.8</b> Где хостить <code>.html</code>?</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="data_presentation.html"><a href="data_presentation.html#бывают-и-другие-способы-представления-данных"><i class="fa fa-check"></i><b>4.2</b> Бывают и другие способы представления данных</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="работа-с-текстами-gutenbergr-tidytext-stopwords.html"><a href="работа-с-текстами-gutenbergr-tidytext-stopwords.html"><i class="fa fa-check"></i><b>5</b> Работа с текстами: <code>gutenbergr</code>, <code>tidytext</code>, <code>stopwords</code></a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="работа-с-текстами-gutenbergr-tidytext-stopwords.html"><a href="работа-с-текстами-gutenbergr-tidytext-stopwords.html#загрузка-текста-в-r"><i class="fa fa-check"></i><b>5.1</b> Загрузка текста в R</a></li>
+<li class="chapter" data-level="5.2" data-path="работа-с-текстами-gutenbergr-tidytext-stopwords.html"><a href="работа-с-текстами-gutenbergr-tidytext-stopwords.html#пакет-gutenbergr"><i class="fa fa-check"></i><b>5.2</b> Пакет <code>gutenbergr</code></a></li>
+<li class="chapter" data-level="5.3" data-path="работа-с-текстами-gutenbergr-tidytext-stopwords.html"><a href="работа-с-текстами-gutenbergr-tidytext-stopwords.html#библиотека-tidytext"><i class="fa fa-check"></i><b>5.3</b> Библиотека <code>tidytext</code></a></li>
+<li class="chapter" data-level="5.4" data-path="работа-с-текстами-gutenbergr-tidytext-stopwords.html"><a href="работа-с-текстами-gutenbergr-tidytext-stopwords.html#пакет-stopwords"><i class="fa fa-check"></i><b>5.4</b> Пакет <code>stopwords</code></a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="работа-со-временем-lubridate.html"><a href="работа-со-временем-lubridate.html"><i class="fa fa-check"></i><b>6</b> Работа со временем: <code>lubridate</code></a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="работа-со-временем-lubridate.html"><a href="работа-со-временем-lubridate.html#создание-даты"><i class="fa fa-check"></i><b>6.1</b> Создание даты</a></li>
+<li class="chapter" data-level="6.2" data-path="работа-со-временем-lubridate.html"><a href="работа-со-временем-lubridate.html#извлечение-компонентов-даты"><i class="fa fa-check"></i><b>6.2</b> Извлечение компонентов даты</a></li>
+<li class="chapter" data-level="6.3" data-path="работа-со-временем-lubridate.html"><a href="работа-со-временем-lubridate.html#операции-с-датами"><i class="fa fa-check"></i><b>6.3</b> Операции с датами</a></li>
+<li class="chapter" data-level="6.4" data-path="работа-со-временем-lubridate.html"><a href="работа-со-временем-lubridate.html#визуализация-времени-данные-левада-центра"><i class="fa fa-check"></i><b>6.4</b> Визуализация времени: данные Левада-центра</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="работа-с-геоданными-leaflet.html"><a href="работа-с-геоданными-leaflet.html"><i class="fa fa-check"></i><b>7</b> Работа с геоданными: <code>leaflet</code></a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="работа-с-геоданными-leaflet.html"><a href="работа-с-геоданными-leaflet.html#векторная-и-растровая-графика"><i class="fa fa-check"></i><b>7.1</b> Векторная и растровая графика</a></li>
+<li class="chapter" data-level="7.2" data-path="работа-с-геоданными-leaflet.html"><a href="работа-с-геоданными-leaflet.html#картографические-примитивы"><i class="fa fa-check"></i><b>7.2</b> Картографические примитивы</a></li>
+<li class="chapter" data-level="7.3" data-path="работа-с-геоданными-leaflet.html"><a href="работа-с-геоданными-leaflet.html#leaflet"><i class="fa fa-check"></i><b>7.3</b> <code>leaflet</code></a>
+<ul>
+<li class="chapter" data-level="7.3.1" data-path="работа-с-геоданными-leaflet.html"><a href="работа-с-геоданными-leaflet.html#csv-файлы"><i class="fa fa-check"></i><b>7.3.1</b> <code>.csv</code> файлы</a></li>
+<li class="chapter" data-level="7.3.2" data-path="работа-с-геоданными-leaflet.html"><a href="работа-с-геоданными-leaflet.html#комбинация-карт-leafsync"><i class="fa fa-check"></i><b>7.3.2</b> Комбинация карт: <code>leafsync</code></a></li>
+<li class="chapter" data-level="7.3.3" data-path="работа-с-геоданными-leaflet.html"><a href="работа-с-геоданными-leaflet.html#работа-с-.geojson"><i class="fa fa-check"></i><b>7.3.3</b> Работа с <code>.geojson</code></a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="описательная-статистика-распределения.html"><a href="описательная-статистика-распределения.html"><i class="fa fa-check"></i><b>8</b> Описательная статистика, распределения</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="описательная-статистика-распределения.html"><a href="описательная-статистика-распределения.html#описательная-статистика"><i class="fa fa-check"></i><b>8.1</b> Описательная статистика</a>
+<ul>
+<li class="chapter" data-level="8.1.1" data-path="описательная-статистика-распределения.html"><a href="описательная-статистика-распределения.html#категориальные-переменные"><i class="fa fa-check"></i><b>8.1.1</b> Категориальные переменные</a></li>
+<li class="chapter" data-level="8.1.2" data-path="описательная-статистика-распределения.html"><a href="описательная-статистика-распределения.html#числовые-переменные"><i class="fa fa-check"></i><b>8.1.2</b> Числовые переменные</a></li>
+</ul></li>
+<li class="chapter" data-level="8.2" data-path="описательная-статистика-распределения.html"><a href="описательная-статистика-распределения.html#от-частотности-к-вероятности"><i class="fa fa-check"></i><b>8.2</b> От частотности к вероятности</a>
+<ul>
+<li class="chapter" data-level="8.2.1" data-path="описательная-статистика-распределения.html"><a href="описательная-статистика-распределения.html#категориальная-переменная"><i class="fa fa-check"></i><b>8.2.1</b> Категориальная переменная</a></li>
+<li class="chapter" data-level="8.2.2" data-path="описательная-статистика-распределения.html"><a href="описательная-статистика-распределения.html#числовая-переменная"><i class="fa fa-check"></i><b>8.2.2</b> Числовая переменная</a></li>
+<li class="chapter" data-level="8.2.3" data-path="описательная-статистика-распределения.html"><a href="описательная-статистика-распределения.html#распределения"><i class="fa fa-check"></i><b>8.2.3</b> Распределения</a></li>
+<li class="chapter" data-level="8.2.4" data-path="описательная-статистика-распределения.html"><a href="описательная-статистика-распределения.html#давайте-посчитаем-вероятности"><i class="fa fa-check"></i><b>8.2.4</b> Давайте посчитаем вероятности</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="проверка-статистических-гипотез.html"><a href="проверка-статистических-гипотез.html"><i class="fa fa-check"></i><b>9</b> Проверка статистических гипотез</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="проверка-статистических-гипотез.html"><a href="проверка-статистических-гипотез.html#о-статистике"><i class="fa fa-check"></i><b>9.1</b> О статистике</a></li>
+<li class="chapter" data-level="9.2" data-path="проверка-статистических-гипотез.html"><a href="проверка-статистических-гипотез.html#проверка-нулевой-гипотезы"><i class="fa fa-check"></i><b>9.2</b> Проверка нулевой гипотезы</a></li>
+<li class="chapter" data-level="9.3" data-path="проверка-статистических-гипотез.html"><a href="проверка-статистических-гипотез.html#классификация-статистических-тестов"><i class="fa fa-check"></i><b>9.3</b> Классификация статистических тестов</a>
+<ul>
+<li class="chapter" data-level="9.3.1" data-path="проверка-статистических-гипотез.html"><a href="проверка-статистических-гипотез.html#количество-выборок"><i class="fa fa-check"></i><b>9.3.1</b> Количество выборок</a></li>
+<li class="chapter" data-level="9.3.2" data-path="проверка-статистических-гипотез.html"><a href="проверка-статистических-гипотез.html#направление"><i class="fa fa-check"></i><b>9.3.2</b> Направление</a></li>
+<li class="chapter" data-level="9.3.3" data-path="проверка-статистических-гипотез.html"><a href="проверка-статистических-гипотез.html#парные-vs.-непарные"><i class="fa fa-check"></i><b>9.3.3</b> Парные vs. непарные</a></li>
+<li class="chapter" data-level="9.3.4" data-path="проверка-статистических-гипотез.html"><a href="проверка-статистических-гипотез.html#параметрические-vs.-непараметрические"><i class="fa fa-check"></i><b>9.3.4</b> Параметрические vs. непараметрические</a></li>
+<li class="chapter" data-level="9.3.5" data-path="проверка-статистических-гипотез.html"><a href="проверка-статистических-гипотез.html#классификация-тестов"><i class="fa fa-check"></i><b>9.3.5</b> Классификация тестов</a></li>
+</ul></li>
+<li class="chapter" data-level="9.4" data-path="проверка-статистических-гипотез.html"><a href="проверка-статистических-гипотез.html#одновыборочные-тесты"><i class="fa fa-check"></i><b>9.4</b> Одновыборочные тесты</a>
+<ul>
+<li class="chapter" data-level="9.4.1" data-path="проверка-статистических-гипотез.html"><a href="проверка-статистических-гипотез.html#биномиальный-тест"><i class="fa fa-check"></i><b>9.4.1</b> Биномиальный тест</a></li>
+<li class="chapter" data-level="9.4.2" data-path="проверка-статистических-гипотез.html"><a href="проверка-статистических-гипотез.html#одновыборочный-t-тест"><i class="fa fa-check"></i><b>9.4.2</b> Одновыборочный t-тест</a></li>
+<li class="chapter" data-level="9.4.3" data-path="проверка-статистических-гипотез.html"><a href="проверка-статистических-гипотез.html#тест-уилкоксона"><i class="fa fa-check"></i><b>9.4.3</b> Тест Уилкоксона</a></li>
+</ul></li>
+<li class="chapter" data-level="9.5" data-path="проверка-статистических-гипотез.html"><a href="проверка-статистических-гипотез.html#двухвыборочные-тесты"><i class="fa fa-check"></i><b>9.5</b> Двухвыборочные тесты</a>
+<ul>
+<li class="chapter" data-level="9.5.1" data-path="проверка-статистических-гипотез.html"><a href="проверка-статистических-гипотез.html#двухвыборочный-t-тест"><i class="fa fa-check"></i><b>9.5.1</b> Двухвыборочный t-тест</a></li>
+<li class="chapter" data-level="9.5.2" data-path="проверка-статистических-гипотез.html"><a href="проверка-статистических-гипотез.html#двухвыборочный-парный-t-тест"><i class="fa fa-check"></i><b>9.5.2</b> Двухвыборочный парный t-тест</a></li>
+<li class="chapter" data-level="9.5.3" data-path="проверка-статистических-гипотез.html"><a href="проверка-статистических-гипотез.html#критерий-манна-уитни"><i class="fa fa-check"></i><b>9.5.3</b> Критерий Манна-Уитни</a></li>
+<li class="chapter" data-level="9.5.4" data-path="проверка-статистических-гипотез.html"><a href="проверка-статистических-гипотез.html#критерий-χ²-тест-фишера"><i class="fa fa-check"></i><b>9.5.4</b> Критерий χ², тест Фишера</a></li>
+<li class="chapter" data-level="9.5.5" data-path="проверка-статистических-гипотез.html"><a href="проверка-статистических-гипотез.html#критерий-мак-немара"><i class="fa fa-check"></i><b>9.5.5</b> Критерий Мак Немара</a></li>
+</ul></li>
+<li class="chapter" data-level="9.6" data-path="проверка-статистических-гипотез.html"><a href="проверка-статистических-гипотез.html#послесловие"><i class="fa fa-check"></i><b>9.6</b> Послесловие</a></li>
+<li class="chapter" data-level="9.7" data-path="проверка-статистических-гипотез.html"><a href="проверка-статистических-гипотез.html#рассказы-чехова-и-зощенко"><i class="fa fa-check"></i><b>9.7</b> Рассказы Чехова и Зощенко</a>
+<ul>
+<li class="chapter" data-level="9.7.1" data-path="проверка-статистических-гипотез.html"><a href="проверка-статистических-гипотез.html#section"><i class="fa fa-check"></i><b>9.7.1</b> </a></li>
+<li class="chapter" data-level="9.7.2" data-path="проверка-статистических-гипотез.html"><a href="проверка-статистических-гипотез.html#section-1"><i class="fa fa-check"></i><b>9.7.2</b> </a></li>
+<li class="chapter" data-level="9.7.3" data-path="проверка-статистических-гипотез.html"><a href="проверка-статистических-гипотез.html#section-2"><i class="fa fa-check"></i><b>9.7.3</b> </a></li>
+<li class="chapter" data-level="9.7.4" data-path="проверка-статистических-гипотез.html"><a href="проверка-статистических-гипотез.html#section-3"><i class="fa fa-check"></i><b>9.7.4</b> </a></li>
+</ul></li>
+<li class="chapter" data-level="9.8" data-path="проверка-статистических-гипотез.html"><a href="проверка-статистических-гипотез.html#obamacare"><i class="fa fa-check"></i><b>9.8</b> Obamacare</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="корреляция-и-регрессия.html"><a href="корреляция-и-регрессия.html"><i class="fa fa-check"></i><b>10</b> Корреляция и регрессия</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="корреляция-и-регрессия.html"><a href="корреляция-и-регрессия.html#дисперсия-и-стандартное-отклонение"><i class="fa fa-check"></i><b>10.1</b> Дисперсия и стандартное отклонение</a></li>
+<li class="chapter" data-level="10.2" data-path="корреляция-и-регрессия.html"><a href="корреляция-и-регрессия.html#z-преобразование"><i class="fa fa-check"></i><b>10.2</b> z-преобразование</a></li>
+<li class="chapter" data-level="10.3" data-path="корреляция-и-регрессия.html"><a href="корреляция-и-регрессия.html#ковариация"><i class="fa fa-check"></i><b>10.3</b> Ковариация</a></li>
+<li class="chapter" data-level="10.4" data-path="корреляция-и-регрессия.html"><a href="корреляция-и-регрессия.html#корреляция"><i class="fa fa-check"></i><b>10.4</b> Корреляция</a>
+<ul>
+<li class="chapter" data-level="10.4.1" data-path="корреляция-и-регрессия.html"><a href="корреляция-и-регрессия.html#корреляция-пирсона"><i class="fa fa-check"></i><b>10.4.1</b> Корреляция Пирсона</a></li>
+<li class="chapter" data-level="10.4.2" data-path="корреляция-и-регрессия.html"><a href="корреляция-и-регрессия.html#ранговые-корреляции-спирмана-и-кендалла"><i class="fa fa-check"></i><b>10.4.2</b> Ранговые корреляции Спирмана и Кендалла</a></li>
+</ul></li>
+<li class="chapter" data-level="10.5" data-path="корреляция-и-регрессия.html"><a href="корреляция-и-регрессия.html#регрессионный-анализ"><i class="fa fa-check"></i><b>10.5</b> Регрессионный анализ</a>
+<ul>
+<li class="chapter" data-level="10.5.1" data-path="корреляция-и-регрессия.html"><a href="корреляция-и-регрессия.html#основы"><i class="fa fa-check"></i><b>10.5.1</b> Основы</a></li>
+<li class="chapter" data-level="10.5.2" data-path="корреляция-и-регрессия.html"><a href="корреляция-и-регрессия.html#первая-регрессия"><i class="fa fa-check"></i><b>10.5.2</b> Первая регрессия</a></li>
+<li class="chapter" data-level="10.5.3" data-path="корреляция-и-регрессия.html"><a href="корреляция-и-регрессия.html#категориальные-переменные-1"><i class="fa fa-check"></i><b>10.5.3</b> Категориальные переменные</a></li>
+<li class="chapter" data-level="10.5.4" data-path="корреляция-и-регрессия.html"><a href="корреляция-и-регрессия.html#множественная-регрессия"><i class="fa fa-check"></i><b>10.5.4</b> Множественная регрессия</a></li>
+<li class="chapter" data-level="10.5.5" data-path="корреляция-и-регрессия.html"><a href="корреляция-и-регрессия.html#сравнение-моделей"><i class="fa fa-check"></i><b>10.5.5</b> Сравнение моделей</a></li>
+<li class="chapter" data-level="10.5.6" data-path="корреляция-и-регрессия.html"><a href="корреляция-и-регрессия.html#послесловие-1"><i class="fa fa-check"></i><b>10.5.6</b> Послесловие</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="работа-статистического-детектива.html"><a href="работа-статистического-детектива.html"><i class="fa fa-check"></i><b>11</b> Работа статистического детектива</a>
+<ul>
+<li class="chapter" data-level="11.1" data-path="работа-статистического-детектива.html"><a href="работа-статистического-детектива.html#введение"><i class="fa fa-check"></i><b>11.1</b> Введение</a></li>
+<li class="chapter" data-level="11.2" data-path="работа-статистического-детектива.html"><a href="работа-статистического-детектива.html#возможно-ли-такое-среднее"><i class="fa fa-check"></i><b>11.2</b> Возможно ли такое среднее?</a></li>
+<li class="chapter" data-level="11.3" data-path="работа-статистического-детектива.html"><a href="работа-статистического-детектива.html#пакет-statcheck"><i class="fa fa-check"></i><b>11.3</b> Пакет <code>statcheck</code></a></li>
+<li class="chapter" data-level="11.4" data-path="работа-статистического-детектива.html"><a href="работа-статистического-детектива.html#пакет-digitize"><i class="fa fa-check"></i><b>11.4</b> Пакет <code>digitize</code></a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="ссылки-на-литературу.html"><a href="ссылки-на-литературу.html"><i class="fa fa-check"></i>Ссылки на литературу</a></li>
 </ul>
 
       </nav>

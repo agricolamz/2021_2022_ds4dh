@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>11 Работа статистического детектива | Наука о данных в R для программы Цифровых гуманитарных исследований</title>
+  <meta name="description" content="11 Работа статистического детектива | Наука о данных в R для программы Цифровых гуманитарных исследований" />
+  <meta name="generator" content="bookdown 0.26 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="11 Работа статистического детектива | Наука о данных в R для программы Цифровых гуманитарных исследований" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="11 Работа статистического детектива | Наука о данных в R для программы Цифровых гуманитарных исследований" />
+  
+  
+  
+
+<meta name="author" content="Г. А. Мороз, И. С. Поздняков" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="корреляция-и-регрессия.html"/>
+<link rel="next" href="ссылки-на-литературу.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/pagedtable-1.1/css/pagedtable.css" rel="stylesheet" />
+<script src="libs/pagedtable-1.1/js/pagedtable.js"></script>
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<script src="libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
+<link href="libs/str_view-0.1.0/str_view.css" rel="stylesheet" />
+<script src="libs/str_view-binding-1.4.0/str_view.js"></script>
+<link href="libs/leaflet-1.3.1/leaflet.css" rel="stylesheet" />
+<script src="libs/leaflet-1.3.1/leaflet.js"></script>
+<link href="libs/leafletfix-1.0.0/leafletfix.css" rel="stylesheet" />
+<script src="libs/proj4-2.6.2/proj4.min.js"></script>
+<script src="libs/Proj4Leaflet-1.0.1/proj4leaflet.js"></script>
+<link href="libs/rstudio_leaflet-1.3.1/rstudio_leaflet.css" rel="stylesheet" />
+<script src="libs/leaflet-binding-2.1.1/leaflet.js"></script>
+<script src="libs/leaflet-providers-1.9.0/leaflet-providers_1.9.0.js"></script>
+<script src="libs/leaflet-providers-plugin-2.1.1/leaflet-providers-plugin.js"></script>
+<script src="libs/Leaflet.Sync-0.0.5/L.Map.Sync.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Наука о данных в R для ЦГИ</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> О курсе</a></li>
+<li class="chapter" data-level="2" data-path="viz_1.html"><a href="viz_1.html"><i class="fa fa-check"></i><b>2</b> Визуализация данных</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="viz_1.html"><a href="viz_1.html#зачем-визуализировать-данные"><i class="fa fa-check"></i><b>2.1</b> Зачем визуализировать данные?</a>
+<ul>
+<li class="chapter" data-level="2.1.1" data-path="viz_1.html"><a href="viz_1.html#квартет-анскомба"><i class="fa fa-check"></i><b>2.1.1</b> Квартет Анскомба</a></li>
+<li class="chapter" data-level="2.1.2" data-path="viz_1.html"><a href="viz_1.html#датазаурус"><i class="fa fa-check"></i><b>2.1.2</b> Датазаурус</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="viz_1.html"><a href="viz_1.html#основы-ggplot2"><i class="fa fa-check"></i><b>2.2</b> Основы <code>ggplot2</code></a>
+<ul>
+<li class="chapter" data-level="2.2.1" data-path="viz_1.html"><a href="viz_1.html#диаграмма-рассеяния-scaterplot"><i class="fa fa-check"></i><b>2.2.1</b> Диаграмма рассеяния (Scaterplot)</a></li>
+<li class="chapter" data-level="2.2.2" data-path="viz_1.html"><a href="viz_1.html#слои"><i class="fa fa-check"></i><b>2.2.2</b> Слои</a></li>
+<li class="chapter" data-level="2.2.3" data-path="viz_1.html"><a href="viz_1.html#aes"><i class="fa fa-check"></i><b>2.2.3</b> <code>aes()</code></a></li>
+<li class="chapter" data-level="2.2.4" data-path="viz_1.html"><a href="viz_1.html#оформление"><i class="fa fa-check"></i><b>2.2.4</b> Оформление</a></li>
+<li class="chapter" data-level="2.2.5" data-path="viz_1.html"><a href="viz_1.html#логарифмические-шкалы"><i class="fa fa-check"></i><b>2.2.5</b> Логарифмические шкалы</a></li>
+<li class="chapter" data-level="2.2.6" data-path="viz_1.html"><a href="viz_1.html#annotate"><i class="fa fa-check"></i><b>2.2.6</b> <code>annotate()</code></a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="viz_1.html"><a href="viz_1.html#столбчатые-диаграммы-barplots"><i class="fa fa-check"></i><b>2.3</b> Столбчатые диаграммы (barplots)</a></li>
+<li class="chapter" data-level="2.4" data-path="viz_1.html"><a href="viz_1.html#факторы"><i class="fa fa-check"></i><b>2.4</b> Факторы</a></li>
+<li class="chapter" data-level="2.5" data-path="viz_1.html"><a href="viz_1.html#дотплот"><i class="fa fa-check"></i><b>2.5</b> Дотплот</a></li>
+<li class="chapter" data-level="2.6" data-path="viz_1.html"><a href="viz_1.html#гистограммы"><i class="fa fa-check"></i><b>2.6</b> Гистограммы</a></li>
+<li class="chapter" data-level="2.7" data-path="viz_1.html"><a href="viz_1.html#функции-плотности"><i class="fa fa-check"></i><b>2.7</b> Функции плотности</a></li>
+<li class="chapter" data-level="2.8" data-path="viz_1.html"><a href="viz_1.html#точки-джиттер-jitter-вайолинплот-violinplot-ящики-с-усами-boxplot"><i class="fa fa-check"></i><b>2.8</b> Точки, джиттер (jitter), вайолинплот (violinplot), ящики с усами (boxplot),</a></li>
+<li class="chapter" data-level="2.9" data-path="viz_1.html"><a href="viz_1.html#фасетизация"><i class="fa fa-check"></i><b>2.9</b> Фасетизация</a></li>
+<li class="chapter" data-level="2.10" data-path="viz_1.html"><a href="viz_1.html#визуализация-комбинаций-признаков"><i class="fa fa-check"></i><b>2.10</b> Визуализация комбинаций признаков</a>
+<ul>
+<li class="chapter" data-level="2.10.1" data-path="viz_1.html"><a href="viz_1.html#потоковая-диаграмма-sankey-diagram"><i class="fa fa-check"></i><b>2.10.1</b> Потоковая Диаграмма (Sankey diagram)</a></li>
+<li class="chapter" data-level="2.10.2" data-path="viz_1.html"><a href="viz_1.html#upset-plot"><i class="fa fa-check"></i><b>2.10.2</b> UpSet Plot</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="strings.html"><a href="strings.html"><i class="fa fa-check"></i><b>3</b> Работа со строками</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="strings.html"><a href="strings.html#работа-со-строками-в-r"><i class="fa fa-check"></i><b>3.1</b> Работа со строками в R</a></li>
+<li class="chapter" data-level="3.2" data-path="strings.html"><a href="strings.html#как-получить-строку"><i class="fa fa-check"></i><b>3.2</b> Как получить строку?</a></li>
+<li class="chapter" data-level="3.3" data-path="strings.html"><a href="strings.html#соединение-и-разделение-строк"><i class="fa fa-check"></i><b>3.3</b> Соединение и разделение строк</a></li>
+<li class="chapter" data-level="3.4" data-path="strings.html"><a href="strings.html#количество-символов"><i class="fa fa-check"></i><b>3.4</b> Количество символов</a>
+<ul>
+<li class="chapter" data-level="3.4.1" data-path="strings.html"><a href="strings.html#подсчет-количества-символов"><i class="fa fa-check"></i><b>3.4.1</b> Подсчет количества символов</a></li>
+<li class="chapter" data-level="3.4.2" data-path="strings.html"><a href="strings.html#подгонка-количества-символов"><i class="fa fa-check"></i><b>3.4.2</b> Подгонка количества символов</a></li>
+</ul></li>
+<li class="chapter" data-level="3.5" data-path="strings.html"><a href="strings.html#сортировка"><i class="fa fa-check"></i><b>3.5</b> Сортировка</a></li>
+<li class="chapter" data-level="3.6" data-path="strings.html"><a href="strings.html#поиск-подстроки"><i class="fa fa-check"></i><b>3.6</b> Поиск подстроки</a></li>
+<li class="chapter" data-level="3.7" data-path="strings.html"><a href="strings.html#изменение-строк"><i class="fa fa-check"></i><b>3.7</b> Изменение строк</a>
+<ul>
+<li class="chapter" data-level="3.7.1" data-path="strings.html"><a href="strings.html#изменение-регистра"><i class="fa fa-check"></i><b>3.7.1</b> Изменение регистра</a></li>
+<li class="chapter" data-level="3.7.2" data-path="strings.html"><a href="strings.html#выделение-подстроки"><i class="fa fa-check"></i><b>3.7.2</b> Выделение подстроки</a></li>
+<li class="chapter" data-level="3.7.3" data-path="strings.html"><a href="strings.html#замена-подстроки"><i class="fa fa-check"></i><b>3.7.3</b> Замена подстроки</a></li>
+<li class="chapter" data-level="3.7.4" data-path="strings.html"><a href="strings.html#удаление-подстроки"><i class="fa fa-check"></i><b>3.7.4</b> Удаление подстроки</a></li>
+<li class="chapter" data-level="3.7.5" data-path="strings.html"><a href="strings.html#транслитерация-строк"><i class="fa fa-check"></i><b>3.7.5</b> Транслитерация строк</a></li>
+</ul></li>
+<li class="chapter" data-level="3.8" data-path="strings.html"><a href="strings.html#регулярные-выражения"><i class="fa fa-check"></i><b>3.8</b> Регулярные выражения</a>
+<ul>
+<li class="chapter" data-level="3.8.1" data-path="strings.html"><a href="strings.html#экранирование-метасимволов"><i class="fa fa-check"></i><b>3.8.1</b> Экранирование метасимволов</a></li>
+<li class="chapter" data-level="3.8.2" data-path="strings.html"><a href="strings.html#классы-знаков"><i class="fa fa-check"></i><b>3.8.2</b> Классы знаков</a></li>
+<li class="chapter" data-level="3.8.3" data-path="strings.html"><a href="strings.html#квантификация"><i class="fa fa-check"></i><b>3.8.3</b> Квантификация</a></li>
+<li class="chapter" data-level="3.8.4" data-path="strings.html"><a href="strings.html#позиционная-проверка-look-arounds"><i class="fa fa-check"></i><b>3.8.4</b> Позиционная проверка (look arounds)</a></li>
+</ul></li>
+<li class="chapter" data-level="3.9" data-path="strings.html"><a href="strings.html#определение-языка"><i class="fa fa-check"></i><b>3.9</b> Определение языка</a></li>
+<li class="chapter" data-level="3.10" data-path="strings.html"><a href="strings.html#расстояния-между-строками"><i class="fa fa-check"></i><b>3.10</b> Расстояния между строками</a></li>
+<li class="chapter" data-level="3.11" data-path="strings.html"><a href="strings.html#дополнительные-задания"><i class="fa fa-check"></i><b>3.11</b> Дополнительные задания:</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="data_presentation.html"><a href="data_presentation.html"><i class="fa fa-check"></i><b>4</b> Представление данных: <code>rmarkdown</code></a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="data_presentation.html"><a href="data_presentation.html#rmarkdown"><i class="fa fa-check"></i><b>4.1</b> <code>rmarkdown</code></a>
+<ul>
+<li class="chapter" data-level="4.1.1" data-path="data_presentation.html"><a href="data_presentation.html#установка"><i class="fa fa-check"></i><b>4.1.1</b> Установка</a></li>
+<li class="chapter" data-level="4.1.2" data-path="data_presentation.html"><a href="data_presentation.html#составляющие-rmarkdown-документа"><i class="fa fa-check"></i><b>4.1.2</b> Составляющие <code>rmarkdown</code>-документа</a></li>
+<li class="chapter" data-level="4.1.3" data-path="data_presentation.html"><a href="data_presentation.html#пример-rmarkdown-документа"><i class="fa fa-check"></i><b>4.1.3</b> Пример <code>rmarkdown</code>-документа</a></li>
+<li class="chapter" data-level="4.1.4" data-path="data_presentation.html"><a href="data_presentation.html#markdown"><i class="fa fa-check"></i><b>4.1.4</b> <code>Markdown</code></a></li>
+<li class="chapter" data-level="4.1.5" data-path="data_presentation.html"><a href="data_presentation.html#pandoc"><i class="fa fa-check"></i><b>4.1.5</b> <code>Pandoc</code></a></li>
+<li class="chapter" data-level="4.1.6" data-path="data_presentation.html"><a href="data_presentation.html#code-chunks"><i class="fa fa-check"></i><b>4.1.6</b> Code chunks</a></li>
+<li class="chapter" data-level="4.1.7" data-path="data_presentation.html"><a href="data_presentation.html#yaml-шапка"><i class="fa fa-check"></i><b>4.1.7</b> YAML шапка</a></li>
+<li class="chapter" data-level="4.1.8" data-path="data_presentation.html"><a href="data_presentation.html#где-хостить-.html"><i class="fa fa-check"></i><b>4.1.8</b> Где хостить <code>.html</code>?</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="data_presentation.html"><a href="data_presentation.html#бывают-и-другие-способы-представления-данных"><i class="fa fa-check"></i><b>4.2</b> Бывают и другие способы представления данных</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="работа-с-текстами-gutenbergr-tidytext-stopwords.html"><a href="работа-с-текстами-gutenbergr-tidytext-stopwords.html"><i class="fa fa-check"></i><b>5</b> Работа с текстами: <code>gutenbergr</code>, <code>tidytext</code>, <code>stopwords</code></a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="работа-с-текстами-gutenbergr-tidytext-stopwords.html"><a href="работа-с-текстами-gutenbergr-tidytext-stopwords.html#загрузка-текста-в-r"><i class="fa fa-check"></i><b>5.1</b> Загрузка текста в R</a></li>
+<li class="chapter" data-level="5.2" data-path="работа-с-текстами-gutenbergr-tidytext-stopwords.html"><a href="работа-с-текстами-gutenbergr-tidytext-stopwords.html#пакет-gutenbergr"><i class="fa fa-check"></i><b>5.2</b> Пакет <code>gutenbergr</code></a></li>
+<li class="chapter" data-level="5.3" data-path="работа-с-текстами-gutenbergr-tidytext-stopwords.html"><a href="работа-с-текстами-gutenbergr-tidytext-stopwords.html#библиотека-tidytext"><i class="fa fa-check"></i><b>5.3</b> Библиотека <code>tidytext</code></a></li>
+<li class="chapter" data-level="5.4" data-path="работа-с-текстами-gutenbergr-tidytext-stopwords.html"><a href="работа-с-текстами-gutenbergr-tidytext-stopwords.html#пакет-stopwords"><i class="fa fa-check"></i><b>5.4</b> Пакет <code>stopwords</code></a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="работа-со-временем-lubridate.html"><a href="работа-со-временем-lubridate.html"><i class="fa fa-check"></i><b>6</b> Работа со временем: <code>lubridate</code></a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="работа-со-временем-lubridate.html"><a href="работа-со-временем-lubridate.html#создание-даты"><i class="fa fa-check"></i><b>6.1</b> Создание даты</a></li>
+<li class="chapter" data-level="6.2" data-path="работа-со-временем-lubridate.html"><a href="работа-со-временем-lubridate.html#извлечение-компонентов-даты"><i class="fa fa-check"></i><b>6.2</b> Извлечение компонентов даты</a></li>
+<li class="chapter" data-level="6.3" data-path="работа-со-временем-lubridate.html"><a href="работа-со-временем-lubridate.html#операции-с-датами"><i class="fa fa-check"></i><b>6.3</b> Операции с датами</a></li>
+<li class="chapter" data-level="6.4" data-path="работа-со-временем-lubridate.html"><a href="работа-со-временем-lubridate.html#визуализация-времени-данные-левада-центра"><i class="fa fa-check"></i><b>6.4</b> Визуализация времени: данные Левада-центра</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="работа-с-геоданными-leaflet.html"><a href="работа-с-геоданными-leaflet.html"><i class="fa fa-check"></i><b>7</b> Работа с геоданными: <code>leaflet</code></a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="работа-с-геоданными-leaflet.html"><a href="работа-с-геоданными-leaflet.html#векторная-и-растровая-графика"><i class="fa fa-check"></i><b>7.1</b> Векторная и растровая графика</a></li>
+<li class="chapter" data-level="7.2" data-path="работа-с-геоданными-leaflet.html"><a href="работа-с-геоданными-leaflet.html#картографические-примитивы"><i class="fa fa-check"></i><b>7.2</b> Картографические примитивы</a></li>
+<li class="chapter" data-level="7.3" data-path="работа-с-геоданными-leaflet.html"><a href="работа-с-геоданными-leaflet.html#leaflet"><i class="fa fa-check"></i><b>7.3</b> <code>leaflet</code></a>
+<ul>
+<li class="chapter" data-level="7.3.1" data-path="работа-с-геоданными-leaflet.html"><a href="работа-с-геоданными-leaflet.html#csv-файлы"><i class="fa fa-check"></i><b>7.3.1</b> <code>.csv</code> файлы</a></li>
+<li class="chapter" data-level="7.3.2" data-path="работа-с-геоданными-leaflet.html"><a href="работа-с-геоданными-leaflet.html#комбинация-карт-leafsync"><i class="fa fa-check"></i><b>7.3.2</b> Комбинация карт: <code>leafsync</code></a></li>
+<li class="chapter" data-level="7.3.3" data-path="работа-с-геоданными-leaflet.html"><a href="работа-с-геоданными-leaflet.html#работа-с-.geojson"><i class="fa fa-check"></i><b>7.3.3</b> Работа с <code>.geojson</code></a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="описательная-статистика-распределения.html"><a href="описательная-статистика-распределения.html"><i class="fa fa-check"></i><b>8</b> Описательная статистика, распределения</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="описательная-статистика-распределения.html"><a href="описательная-статистика-распределения.html#описательная-статистика"><i class="fa fa-check"></i><b>8.1</b> Описательная статистика</a>
+<ul>
+<li class="chapter" data-level="8.1.1" data-path="описательная-статистика-распределения.html"><a href="описательная-статистика-распределения.html#категориальные-переменные"><i class="fa fa-check"></i><b>8.1.1</b> Категориальные переменные</a></li>
+<li class="chapter" data-level="8.1.2" data-path="описательная-статистика-распределения.html"><a href="описательная-статистика-распределения.html#числовые-переменные"><i class="fa fa-check"></i><b>8.1.2</b> Числовые переменные</a></li>
+</ul></li>
+<li class="chapter" data-level="8.2" data-path="описательная-статистика-распределения.html"><a href="описательная-статистика-распределения.html#от-частотности-к-вероятности"><i class="fa fa-check"></i><b>8.2</b> От частотности к вероятности</a>
+<ul>
+<li class="chapter" data-level="8.2.1" data-path="описательная-статистика-распределения.html"><a href="описательная-статистика-распределения.html#категориальная-переменная"><i class="fa fa-check"></i><b>8.2.1</b> Категориальная переменная</a></li>
+<li class="chapter" data-level="8.2.2" data-path="описательная-статистика-распределения.html"><a href="описательная-статистика-распределения.html#числовая-переменная"><i class="fa fa-check"></i><b>8.2.2</b> Числовая переменная</a></li>
+<li class="chapter" data-level="8.2.3" data-path="описательная-статистика-распределения.html"><a href="описательная-статистика-распределения.html#распределения"><i class="fa fa-check"></i><b>8.2.3</b> Распределения</a></li>
+<li class="chapter" data-level="8.2.4" data-path="описательная-статистика-распределения.html"><a href="описательная-статистика-распределения.html#давайте-посчитаем-вероятности"><i class="fa fa-check"></i><b>8.2.4</b> Давайте посчитаем вероятности</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="проверка-статистических-гипотез.html"><a href="проверка-статистических-гипотез.html"><i class="fa fa-check"></i><b>9</b> Проверка статистических гипотез</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="проверка-статистических-гипотез.html"><a href="проверка-статистических-гипотез.html#о-статистике"><i class="fa fa-check"></i><b>9.1</b> О статистике</a></li>
+<li class="chapter" data-level="9.2" data-path="проверка-статистических-гипотез.html"><a href="проверка-статистических-гипотез.html#проверка-нулевой-гипотезы"><i class="fa fa-check"></i><b>9.2</b> Проверка нулевой гипотезы</a></li>
+<li class="chapter" data-level="9.3" data-path="проверка-статистических-гипотез.html"><a href="проверка-статистических-гипотез.html#классификация-статистических-тестов"><i class="fa fa-check"></i><b>9.3</b> Классификация статистических тестов</a>
+<ul>
+<li class="chapter" data-level="9.3.1" data-path="проверка-статистических-гипотез.html"><a href="проверка-статистических-гипотез.html#количество-выборок"><i class="fa fa-check"></i><b>9.3.1</b> Количество выборок</a></li>
+<li class="chapter" data-level="9.3.2" data-path="проверка-статистических-гипотез.html"><a href="проверка-статистических-гипотез.html#направление"><i class="fa fa-check"></i><b>9.3.2</b> Направление</a></li>
+<li class="chapter" data-level="9.3.3" data-path="проверка-статистических-гипотез.html"><a href="проверка-статистических-гипотез.html#парные-vs.-непарные"><i class="fa fa-check"></i><b>9.3.3</b> Парные vs. непарные</a></li>
+<li class="chapter" data-level="9.3.4" data-path="проверка-статистических-гипотез.html"><a href="проверка-статистических-гипотез.html#параметрические-vs.-непараметрические"><i class="fa fa-check"></i><b>9.3.4</b> Параметрические vs. непараметрические</a></li>
+<li class="chapter" data-level="9.3.5" data-path="проверка-статистических-гипотез.html"><a href="проверка-статистических-гипотез.html#классификация-тестов"><i class="fa fa-check"></i><b>9.3.5</b> Классификация тестов</a></li>
+</ul></li>
+<li class="chapter" data-level="9.4" data-path="проверка-статистических-гипотез.html"><a href="проверка-статистических-гипотез.html#одновыборочные-тесты"><i class="fa fa-check"></i><b>9.4</b> Одновыборочные тесты</a>
+<ul>
+<li class="chapter" data-level="9.4.1" data-path="проверка-статистических-гипотез.html"><a href="проверка-статистических-гипотез.html#биномиальный-тест"><i class="fa fa-check"></i><b>9.4.1</b> Биномиальный тест</a></li>
+<li class="chapter" data-level="9.4.2" data-path="проверка-статистических-гипотез.html"><a href="проверка-статистических-гипотез.html#одновыборочный-t-тест"><i class="fa fa-check"></i><b>9.4.2</b> Одновыборочный t-тест</a></li>
+<li class="chapter" data-level="9.4.3" data-path="проверка-статистических-гипотез.html"><a href="проверка-статистических-гипотез.html#тест-уилкоксона"><i class="fa fa-check"></i><b>9.4.3</b> Тест Уилкоксона</a></li>
+</ul></li>
+<li class="chapter" data-level="9.5" data-path="проверка-статистических-гипотез.html"><a href="проверка-статистических-гипотез.html#двухвыборочные-тесты"><i class="fa fa-check"></i><b>9.5</b> Двухвыборочные тесты</a>
+<ul>
+<li class="chapter" data-level="9.5.1" data-path="проверка-статистических-гипотез.html"><a href="проверка-статистических-гипотез.html#двухвыборочный-t-тест"><i class="fa fa-check"></i><b>9.5.1</b> Двухвыборочный t-тест</a></li>
+<li class="chapter" data-level="9.5.2" data-path="проверка-статистических-гипотез.html"><a href="проверка-статистических-гипотез.html#двухвыборочный-парный-t-тест"><i class="fa fa-check"></i><b>9.5.2</b> Двухвыборочный парный t-тест</a></li>
+<li class="chapter" data-level="9.5.3" data-path="проверка-статистических-гипотез.html"><a href="проверка-статистических-гипотез.html#критерий-манна-уитни"><i class="fa fa-check"></i><b>9.5.3</b> Критерий Манна-Уитни</a></li>
+<li class="chapter" data-level="9.5.4" data-path="проверка-статистических-гипотез.html"><a href="проверка-статистических-гипотез.html#критерий-χ²-тест-фишера"><i class="fa fa-check"></i><b>9.5.4</b> Критерий χ², тест Фишера</a></li>
+<li class="chapter" data-level="9.5.5" data-path="проверка-статистических-гипотез.html"><a href="проверка-статистических-гипотез.html#критерий-мак-немара"><i class="fa fa-check"></i><b>9.5.5</b> Критерий Мак Немара</a></li>
+</ul></li>
+<li class="chapter" data-level="9.6" data-path="проверка-статистических-гипотез.html"><a href="проверка-статистических-гипотез.html#послесловие"><i class="fa fa-check"></i><b>9.6</b> Послесловие</a></li>
+<li class="chapter" data-level="9.7" data-path="проверка-статистических-гипотез.html"><a href="проверка-статистических-гипотез.html#рассказы-чехова-и-зощенко"><i class="fa fa-check"></i><b>9.7</b> Рассказы Чехова и Зощенко</a>
+<ul>
+<li class="chapter" data-level="9.7.1" data-path="проверка-статистических-гипотез.html"><a href="проверка-статистических-гипотез.html#section"><i class="fa fa-check"></i><b>9.7.1</b> </a></li>
+<li class="chapter" data-level="9.7.2" data-path="проверка-статистических-гипотез.html"><a href="проверка-статистических-гипотез.html#section-1"><i class="fa fa-check"></i><b>9.7.2</b> </a></li>
+<li class="chapter" data-level="9.7.3" data-path="проверка-статистических-гипотез.html"><a href="проверка-статистических-гипотез.html#section-2"><i class="fa fa-check"></i><b>9.7.3</b> </a></li>
+<li class="chapter" data-level="9.7.4" data-path="проверка-статистических-гипотез.html"><a href="проверка-статистических-гипотез.html#section-3"><i class="fa fa-check"></i><b>9.7.4</b> </a></li>
+</ul></li>
+<li class="chapter" data-level="9.8" data-path="проверка-статистических-гипотез.html"><a href="проверка-статистических-гипотез.html#obamacare"><i class="fa fa-check"></i><b>9.8</b> Obamacare</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="корреляция-и-регрессия.html"><a href="корреляция-и-регрессия.html"><i class="fa fa-check"></i><b>10</b> Корреляция и регрессия</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="корреляция-и-регрессия.html"><a href="корреляция-и-регрессия.html#дисперсия-и-стандартное-отклонение"><i class="fa fa-check"></i><b>10.1</b> Дисперсия и стандартное отклонение</a></li>
+<li class="chapter" data-level="10.2" data-path="корреляция-и-регрессия.html"><a href="корреляция-и-регрессия.html#z-преобразование"><i class="fa fa-check"></i><b>10.2</b> z-преобразование</a></li>
+<li class="chapter" data-level="10.3" data-path="корреляция-и-регрессия.html"><a href="корреляция-и-регрессия.html#ковариация"><i class="fa fa-check"></i><b>10.3</b> Ковариация</a></li>
+<li class="chapter" data-level="10.4" data-path="корреляция-и-регрессия.html"><a href="корреляция-и-регрессия.html#корреляция"><i class="fa fa-check"></i><b>10.4</b> Корреляция</a>
+<ul>
+<li class="chapter" data-level="10.4.1" data-path="корреляция-и-регрессия.html"><a href="корреляция-и-регрессия.html#корреляция-пирсона"><i class="fa fa-check"></i><b>10.4.1</b> Корреляция Пирсона</a></li>
+<li class="chapter" data-level="10.4.2" data-path="корреляция-и-регрессия.html"><a href="корреляция-и-регрессия.html#ранговые-корреляции-спирмана-и-кендалла"><i class="fa fa-check"></i><b>10.4.2</b> Ранговые корреляции Спирмана и Кендалла</a></li>
+</ul></li>
+<li class="chapter" data-level="10.5" data-path="корреляция-и-регрессия.html"><a href="корреляция-и-регрессия.html#регрессионный-анализ"><i class="fa fa-check"></i><b>10.5</b> Регрессионный анализ</a>
+<ul>
+<li class="chapter" data-level="10.5.1" data-path="корреляция-и-регрессия.html"><a href="корреляция-и-регрессия.html#основы"><i class="fa fa-check"></i><b>10.5.1</b> Основы</a></li>
+<li class="chapter" data-level="10.5.2" data-path="корреляция-и-регрессия.html"><a href="корреляция-и-регрессия.html#первая-регрессия"><i class="fa fa-check"></i><b>10.5.2</b> Первая регрессия</a></li>
+<li class="chapter" data-level="10.5.3" data-path="корреляция-и-регрессия.html"><a href="корреляция-и-регрессия.html#категориальные-переменные-1"><i class="fa fa-check"></i><b>10.5.3</b> Категориальные переменные</a></li>
+<li class="chapter" data-level="10.5.4" data-path="корреляция-и-регрессия.html"><a href="корреляция-и-регрессия.html#множественная-регрессия"><i class="fa fa-check"></i><b>10.5.4</b> Множественная регрессия</a></li>
+<li class="chapter" data-level="10.5.5" data-path="корреляция-и-регрессия.html"><a href="корреляция-и-регрессия.html#сравнение-моделей"><i class="fa fa-check"></i><b>10.5.5</b> Сравнение моделей</a></li>
+<li class="chapter" data-level="10.5.6" data-path="корреляция-и-регрессия.html"><a href="корреляция-и-регрессия.html#послесловие-1"><i class="fa fa-check"></i><b>10.5.6</b> Послесловие</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="работа-статистического-детектива.html"><a href="работа-статистического-детектива.html"><i class="fa fa-check"></i><b>11</b> Работа статистического детектива</a>
+<ul>
+<li class="chapter" data-level="11.1" data-path="работа-статистического-детектива.html"><a href="работа-статистического-детектива.html#введение"><i class="fa fa-check"></i><b>11.1</b> Введение</a></li>
+<li class="chapter" data-level="11.2" data-path="работа-статистического-детектива.html"><a href="работа-статистического-детектива.html#возможно-ли-такое-среднее"><i class="fa fa-check"></i><b>11.2</b> Возможно ли такое среднее?</a></li>
+<li class="chapter" data-level="11.3" data-path="работа-статистического-детектива.html"><a href="работа-статистического-детектива.html#пакет-statcheck"><i class="fa fa-check"></i><b>11.3</b> Пакет <code>statcheck</code></a></li>
+<li class="chapter" data-level="11.4" data-path="работа-статистического-детектива.html"><a href="работа-статистического-детектива.html#пакет-digitize"><i class="fa fa-check"></i><b>11.4</b> Пакет <code>digitize</code></a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="ссылки-на-литературу.html"><a href="ссылки-на-литературу.html"><i class="fa fa-check"></i>Ссылки на литературу</a></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Наука о данных в R для программы Цифровых гуманитарных исследований</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="работа-статистического-детектива" class="section level1 hasAnchor" number="11">
+<h1><span class="header-section-number">11</span> Работа статистического детектива<a href="работа-статистического-детектива.html#работа-статистического-детектива" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div class="sourceCode" id="cb631"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb631-1"><a href="работа-статистического-детектива.html#cb631-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">&quot;tidyverse&quot;</span>)</span></code></pre></div>
+<div id="введение" class="section level2 hasAnchor" number="11.1">
+<h2><span class="header-section-number">11.1</span> Введение<a href="работа-статистического-детектива.html#введение" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>До сих пор мы лишь использовали разные статистические тесты, чтобы ответить на разные исследовательские вопросы, которые могут возникнуть. Однако часто в статистические выкладки никто не вчитывается и принимает их как данность, надеясь что софт все правильно посчитал. Здесь есть две опасности: во-первых, бывают недобросовестные исследователи; во-вторых, люди часто ошибаются во время применения и представления результатов статистического анализа (и видимо, это случается чаще). Мы рассмотрим несколько методов, которые позволят проверять некоторые простые случаи, что может быть полезно при критическом чтении (например, во время ревью статей ученых и дата журналистов) в случаях, когда к данным нет доступа. Данный раздел вдохнавлен лекцией <a href="http://learn.stanford.edu/WBN-MED-STATS-On-Demand-2020-02-05_LP-OD-Registration-2020-02-11.html?utm_source=coursera&amp;utm_medium=email&amp;utm_campaign=med-stats">Кристин Сайнани</a>.</p>
+</div>
+<div id="возможно-ли-такое-среднее" class="section level2 hasAnchor" number="11.2">
+<h2><span class="header-section-number">11.2</span> Возможно ли такое среднее?<a href="работа-статистического-детектива.html#возможно-ли-такое-среднее" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Представим себе, что кто-то провел эксперимент с биномиальными данными, например, посчитал количество <em>не</em> в рассказе А. П. Чехова длинной 322 слова “Жизнь прекрасна!” и обнаружил среднее 0.095. Возможно ли это?</p>
+<p>Давайте посмотри на все возможные результаты:</p>
+<div class="sourceCode" id="cb632"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb632-1"><a href="работа-статистического-детектива.html#cb632-1" aria-hidden="true" tabindex="-1"></a><span class="fu">tibble</span>(<span class="at">ratio =</span> <span class="fu">round</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">322</span><span class="sc">/</span><span class="dv">322</span>, <span class="dv">3</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb632-2"><a href="работа-статистического-детектива.html#cb632-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>()<span class="sc">+</span></span>
+<span id="cb632-3"><a href="работа-статистического-детектива.html#cb632-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="fu">aes</span>(<span class="at">xintercept =</span> ratio), <span class="at">color =</span> <span class="st">&quot;lightblue&quot;</span>)<span class="sc">+</span></span>
+<span id="cb632-4"><a href="работа-статистического-детектива.html#cb632-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="fl">0.095</span>, <span class="at">color =</span> <span class="st">&quot;red&quot;</span>)</span></code></pre></div>
+<p><img src="DS_for_DH_files/figure-html/unnamed-chunk-398-1.png" width="672" /></p>
+<p>Так ничего не видно, давайте сконцентрируемся на промежуке от 0.085 до 0.1, в котором лежит завяленное значение 0.095, и добавим подписи:</p>
+<div class="sourceCode" id="cb633"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb633-1"><a href="работа-статистического-детектива.html#cb633-1" aria-hidden="true" tabindex="-1"></a><span class="fu">tibble</span>(<span class="at">ratio =</span> <span class="fu">round</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">322</span><span class="sc">/</span><span class="dv">322</span>, <span class="dv">3</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb633-2"><a href="работа-статистического-детектива.html#cb633-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>()<span class="sc">+</span></span>
+<span id="cb633-3"><a href="работа-статистического-детектива.html#cb633-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="fu">aes</span>(<span class="at">xintercept =</span> ratio), <span class="at">color =</span> <span class="st">&quot;lightblue&quot;</span>)<span class="sc">+</span></span>
+<span id="cb633-4"><a href="работа-статистического-детектива.html#cb633-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="fl">0.095</span>, <span class="at">color =</span> <span class="st">&quot;red&quot;</span>)<span class="sc">+</span></span>
+<span id="cb633-5"><a href="работа-статистического-детектива.html#cb633-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_label</span>(<span class="fu">aes</span>(<span class="at">x =</span> ratio, <span class="at">label =</span> ratio), <span class="at">y =</span> <span class="fl">0.5</span>)<span class="sc">+</span></span>
+<span id="cb633-6"><a href="работа-статистического-детектива.html#cb633-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlim</span>(<span class="fl">0.085</span>, <span class="fl">0.1</span>)</span></code></pre></div>
+<p><img src="DS_for_DH_files/figure-html/unnamed-chunk-399-1.png" width="672" /></p>
+<p>Мы видим, что красные линии повторяются регулярно с интервалом 0.03 и что синяя линия явно не вписывается в этот паттерн. Может быть было использовано другое округление?</p>
+<div class="sourceCode" id="cb634"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb634-1"><a href="работа-статистического-детектива.html#cb634-1" aria-hidden="true" tabindex="-1"></a><span class="fu">tibble</span>(<span class="at">ratio =</span> <span class="fu">round</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">322</span><span class="sc">/</span><span class="dv">322</span>, <span class="dv">5</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb634-2"><a href="работа-статистического-детектива.html#cb634-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>()<span class="sc">+</span></span>
+<span id="cb634-3"><a href="работа-статистического-детектива.html#cb634-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="fu">aes</span>(<span class="at">xintercept =</span> ratio), <span class="at">color =</span> <span class="st">&quot;lightblue&quot;</span>)<span class="sc">+</span></span>
+<span id="cb634-4"><a href="работа-статистического-детектива.html#cb634-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="fl">0.095</span>, <span class="at">color =</span> <span class="st">&quot;red&quot;</span>)<span class="sc">+</span></span>
+<span id="cb634-5"><a href="работа-статистического-детектива.html#cb634-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_label</span>(<span class="fu">aes</span>(<span class="at">x =</span> ratio, <span class="at">label =</span> ratio), <span class="at">y =</span> <span class="fl">0.5</span>)<span class="sc">+</span></span>
+<span id="cb634-6"><a href="работа-статистического-детектива.html#cb634-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlim</span>(<span class="fl">0.085</span>, <span class="fl">0.1</span>)</span></code></pre></div>
+<p><img src="DS_for_DH_files/figure-html/unnamed-chunk-400-1.png" width="672" /></p>
+<p>Если бы числа округлялись вверх, на месте 0.09317 мы бы увидели 0.094. Если бы числа округлялись вниз, на месте 0.09627 мы бы увидели 0.096. Так что доля <em>не</em> в рассказе длинной 322 никак не может быть 0.095. Может быть автор ошибся с количеством слов?</p>
+<div class="sourceCode" id="cb635"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb635-1"><a href="работа-статистического-детектива.html#cb635-1" aria-hidden="true" tabindex="-1"></a><span class="dv">200</span><span class="sc">:</span><span class="dv">400</span><span class="sc">*</span><span class="fl">0.095</span></span></code></pre></div>
+<pre><code>  [1] 19.000 19.095 19.190 19.285 19.380 19.475 19.570 19.665 19.760 19.855
+ [11] 19.950 20.045 20.140 20.235 20.330 20.425 20.520 20.615 20.710 20.805
+ [21] 20.900 20.995 21.090 21.185 21.280 21.375 21.470 21.565 21.660 21.755
+ [31] 21.850 21.945 22.040 22.135 22.230 22.325 22.420 22.515 22.610 22.705
+ [41] 22.800 22.895 22.990 23.085 23.180 23.275 23.370 23.465 23.560 23.655
+ [51] 23.750 23.845 23.940 24.035 24.130 24.225 24.320 24.415 24.510 24.605
+ [61] 24.700 24.795 24.890 24.985 25.080 25.175 25.270 25.365 25.460 25.555
+ [71] 25.650 25.745 25.840 25.935 26.030 26.125 26.220 26.315 26.410 26.505
+ [81] 26.600 26.695 26.790 26.885 26.980 27.075 27.170 27.265 27.360 27.455
+ [91] 27.550 27.645 27.740 27.835 27.930 28.025 28.120 28.215 28.310 28.405
+[101] 28.500 28.595 28.690 28.785 28.880 28.975 29.070 29.165 29.260 29.355
+[111] 29.450 29.545 29.640 29.735 29.830 29.925 30.020 30.115 30.210 30.305
+[121] 30.400 30.495 30.590 30.685 30.780 30.875 30.970 31.065 31.160 31.255
+[131] 31.350 31.445 31.540 31.635 31.730 31.825 31.920 32.015 32.110 32.205
+[141] 32.300 32.395 32.490 32.585 32.680 32.775 32.870 32.965 33.060 33.155
+[151] 33.250 33.345 33.440 33.535 33.630 33.725 33.820 33.915 34.010 34.105
+[161] 34.200 34.295 34.390 34.485 34.580 34.675 34.770 34.865 34.960 35.055
+[171] 35.150 35.245 35.340 35.435 35.530 35.625 35.720 35.815 35.910 36.005
+[181] 36.100 36.195 36.290 36.385 36.480 36.575 36.670 36.765 36.860 36.955
+[191] 37.050 37.145 37.240 37.335 37.430 37.525 37.620 37.715 37.810 37.905
+[201] 38.000</code></pre>
+<p>Среди полученных числе целые числа есть только в значениях 200 и 400. Так что, если автор и ошибся в количестве слов, то слишком масштабно. Еще автор мог ошибиться и там, и там. Этот процесс можно немного автоматизировать:</p>
+<div class="sourceCode" id="cb637"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb637-1"><a href="работа-статистического-детектива.html#cb637-1" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(<span class="dv">200</span><span class="sc">:</span><span class="dv">400</span><span class="sc">*</span><span class="fl">0.095</span>) <span class="sc">==</span> <span class="dv">200</span><span class="sc">:</span><span class="dv">400</span><span class="sc">*</span><span class="fl">0.095</span></span></code></pre></div>
+<pre><code>  [1]  TRUE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+ [13] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+ [25] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+ [37] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+ [49] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+ [61] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+ [73] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+ [85] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+ [97] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+[109] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+[121] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+[133] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+[145] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+[157] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+[169] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+[181] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+[193] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE  TRUE</code></pre>
+<p>Эта идея лежит в основе Granularity-Related Inconsistent Means test (GRIM). Я не нашел его реализации на R, но вот есть <a href="http://www.prepubmed.org/grim_test/">он-лайн приложение</a>.</p>
+</div>
+<div id="пакет-statcheck" class="section level2 hasAnchor" number="11.3">
+<h2><span class="header-section-number">11.3</span> Пакет <code>statcheck</code><a href="работа-статистического-детектива.html#пакет-statcheck" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Пакет <code>statcheck</code> написан для извлечения и проверки результатов статистических тестов, которые приводятся в статьях. Рассмотрим пример двустороннего и одностороннего t-тестов:</p>
+<div class="sourceCode" id="cb639"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb639-1"><a href="работа-статистического-детектива.html#cb639-1" aria-hidden="true" tabindex="-1"></a><span class="fu">t.test</span>(<span class="at">data =</span> mtcars, qsec <span class="sc">~</span> am)</span></code></pre></div>
+<pre><code>
+    Welch Two Sample t-test
+
+data:  qsec by am
+t = 1.2878, df = 25.534, p-value = 0.2093
+alternative hypothesis: true difference in means between group 0 and group 1 is not equal to 0
+95 percent confidence interval:
+ -0.4918522  2.1381679
+sample estimates:
+mean in group 0 mean in group 1 
+       18.18316        17.36000 </code></pre>
+<div class="sourceCode" id="cb641"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb641-1"><a href="работа-статистического-детектива.html#cb641-1" aria-hidden="true" tabindex="-1"></a><span class="fu">t.test</span>(<span class="at">data =</span> mtcars, qsec <span class="sc">~</span> am, <span class="at">alternative =</span> <span class="st">&quot;greater&quot;</span>)</span></code></pre></div>
+<pre><code>
+    Welch Two Sample t-test
+
+data:  qsec by am
+t = 1.2878, df = 25.534, p-value = 0.1047
+alternative hypothesis: true difference in means between group 0 and group 1 is greater than 0
+95 percent confidence interval:
+ -0.2677649        Inf
+sample estimates:
+mean in group 0 mean in group 1 
+       18.18316        17.36000 </code></pre>
+<p>Запустим в функцию <code>statcheck()</code> три варианта:</p>
+<ul>
+<li>результат двустороннего теста;</li>
+<li>результат одностороннего теста;</li>
+<li>совсем неправильный результат.</li>
+</ul>
+<div class="sourceCode" id="cb643"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb643-1"><a href="работа-статистического-детектива.html#cb643-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">&quot;statcheck&quot;</span>)</span>
+<span id="cb643-2"><a href="работа-статистического-детектива.html#cb643-2" aria-hidden="true" tabindex="-1"></a>s <span class="ot">&lt;-</span> <span class="fu">statcheck</span>(<span class="fu">c</span>(<span class="st">&quot;t(25.534) = 1.2878, p = 0.21&quot;</span>, </span>
+<span id="cb643-3"><a href="работа-статистического-детектива.html#cb643-3" aria-hidden="true" tabindex="-1"></a>                 <span class="st">&quot;t(25.534) = 1.2878, p = 0.10&quot;</span>,</span>
+<span id="cb643-4"><a href="работа-статистического-детектива.html#cb643-4" aria-hidden="true" tabindex="-1"></a>                 <span class="st">&quot;t(22.716) = 3.7671, p &lt; 0.01&quot;</span>))</span></code></pre></div>
+<pre><code>
+  |                                                                            
+  |                                                                      |   0%
+  |                                                                            
+  |=======================                                               |  33%
+  |                                                                            
+  |===============================================                       |  67%
+  |                                                                            
+  |======================================================================| 100%</code></pre>
+<div class="sourceCode" id="cb645"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb645-1"><a href="работа-статистического-детектива.html#cb645-1" aria-hidden="true" tabindex="-1"></a>s</span></code></pre></div>
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":["Source"],"name":[1],"type":["chr"],"align":["left"]},{"label":["Statistic"],"name":[2],"type":["chr"],"align":["left"]},{"label":["df1"],"name":[3],"type":["lgl"],"align":["right"]},{"label":["df2"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["Test.Comparison"],"name":[5],"type":["chr"],"align":["left"]},{"label":["Value"],"name":[6],"type":["dbl"],"align":["right"]},{"label":["Reported.Comparison"],"name":[7],"type":["chr"],"align":["left"]},{"label":["Reported.P.Value"],"name":[8],"type":["dbl"],"align":["right"]},{"label":["Computed"],"name":[9],"type":["dbl"],"align":["right"]},{"label":["Raw"],"name":[10],"type":["chr"],"align":["left"]},{"label":["Error"],"name":[11],"type":["lgl"],"align":["right"]},{"label":["DecisionError"],"name":[12],"type":["lgl"],"align":["right"]},{"label":["OneTail"],"name":[13],"type":["lgl"],"align":["right"]},{"label":["OneTailedInTxt"],"name":[14],"type":["lgl"],"align":["right"]},{"label":["APAfactor"],"name":[15],"type":["dbl"],"align":["right"]}],"data":[{"1":"1","2":"t","3":"NA","4":"25.534","5":"=","6":"1.2878","7":"=","8":"0.21","9":"0.209365196","10":"t(25.534) = 1.2878, p = 0.21","11":"FALSE","12":"FALSE","13":"FALSE","14":"FALSE","15":"1"},{"1":"2","2":"t","3":"NA","4":"25.534","5":"=","6":"1.2878","7":"=","8":"0.10","9":"0.209365196","10":"t(25.534) = 1.2878, p = 0.10","11":"TRUE","12":"FALSE","13":"TRUE","14":"FALSE","15":"1"},{"1":"3","2":"t","3":"NA","4":"22.716","5":"=","6":"3.7671","7":"<","8":"0.01","9":"0.001017935","10":"t(22.716) = 3.7671, p < 0.01","11":"FALSE","12":"FALSE","13":"FALSE","14":"FALSE","15":"1"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+<p>Теперь в переменной <code>s</code> находится датафрейм со следующими переменными:</p>
+<ul>
+<li><code>Source</code></li>
+<li><code>Statistic</code></li>
+<li><code>df1</code></li>
+<li><code>df2</code></li>
+<li><code>Test.Comparison</code></li>
+<li><code>Value</code></li>
+<li><code>Reported.Comparison</code></li>
+<li><code>Reported.P.Value</code></li>
+<li><code>Computed</code></li>
+<li><code>Raw</code></li>
+<li><code>Error</code></li>
+<li><code>DecisionError</code></li>
+<li><code>OneTail</code></li>
+<li><code>OneTailedInTxt</code></li>
+<li><code>APAfactor</code></li>
+</ul>
+<p>Функция <code>statcheck()</code> работает со следующими статистиками: <span class="math inline">\(t\)</span>-статистика, <span class="math inline">\(F\)</span>-статистика (мы ее видели в регрессии), коэффициент корреляции, хи-квадрат и <span class="math inline">\(z\)</span>-score (используется в z-тесте).</p>
+<p>В <a href="https://rpubs.com/michelenuijten/statcheckmanual">мануале</a> к пакету описаны много дополнительных функций, которые позволяют не копировать текст из статьи, а автоматически извлекать данные для проверки из .pdf или .html.</p>
+</div>
+<div id="пакет-digitize" class="section level2 hasAnchor" number="11.4">
+<h2><span class="header-section-number">11.4</span> Пакет <code>digitize</code><a href="работа-статистического-детектива.html#пакет-digitize" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Иногда нам может случится, что данные представлены визуально:</p>
+<div class="sourceCode" id="cb646"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb646-1"><a href="работа-статистического-детектива.html#cb646-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">42</span>)</span>
+<span id="cb646-2"><a href="работа-статистического-детектива.html#cb646-2" aria-hidden="true" tabindex="-1"></a><span class="fu">tibble</span>(<span class="at">x =</span> <span class="fu">rnorm</span>(<span class="dv">20</span>, <span class="at">mean =</span> <span class="dv">40</span>, <span class="at">sd =</span> <span class="dv">10</span>),</span>
+<span id="cb646-3"><a href="работа-статистического-детектива.html#cb646-3" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> x <span class="sc">+</span> <span class="fu">rnorm</span>(<span class="dv">20</span>, <span class="at">mean =</span> <span class="dv">0</span>, <span class="at">sd =</span> <span class="dv">5</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb646-4"><a href="работа-статистического-детектива.html#cb646-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(x, y))<span class="sc">+</span></span>
+<span id="cb646-5"><a href="работа-статистического-детектива.html#cb646-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()<span class="sc">+</span></span>
+<span id="cb646-6"><a href="работа-статистического-детектива.html#cb646-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="at">geom =</span> <span class="st">&quot;text&quot;</span>, <span class="at">x =</span> <span class="dv">20</span>, <span class="at">y =</span> <span class="dv">60</span>, <span class="at">label =</span> <span class="st">&quot;r = 0.92&quot;</span>, <span class="at">size =</span> <span class="dv">8</span>)</span></code></pre></div>
+<p><img src="DS_for_DH_files/figure-html/unnamed-chunk-405-1.png" width="672" /></p>
+<p>Как бы нам проверить корреляцию Пирсона, которая представлена на графике? Для этого мы воспользуемся пакетом <code>digitize</code> (однако аналогичные операции можно сделать и <a href="https://apps.automeris.io/wpd/">онлайн</a>). На первом шаге нужно определить границы. При помощи функции <code>ReadAndCal()</code> сначала отметьте минимальное значение по оси x, затем максимальное значение по оси х, затем отметьте минимальное значение по оси y, затем максимальное значение по оси y:</p>
+<div class="sourceCode" id="cb647"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb647-1"><a href="работа-статистического-детектива.html#cb647-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(digitize)</span>
+<span id="cb647-2"><a href="работа-статистического-детектива.html#cb647-2" aria-hidden="true" tabindex="-1"></a>calibration <span class="ot">&lt;-</span>  <span class="fu">ReadAndCal</span>(<span class="st">&#39;images/test_correlaton.png&#39;</span>)</span></code></pre></div>
+<p>После того, как вы отметите границы появятся синие крестики:</p>
+<p><img src="images/test_correlation_calibration.png" /></p>
+<p>Следующий шаг — это отметить наблюдения. Это делается при помощи функции <code>DigitData()</code> (нажмите на кнопку <code>Finish</code> наверху или клавишу <code>Esc</code>):</p>
+<div class="sourceCode" id="cb648"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb648-1"><a href="работа-статистического-детектива.html#cb648-1" aria-hidden="true" tabindex="-1"></a>data.points <span class="ot">&lt;-</span> <span class="fu">DigitData</span>(<span class="at">col =</span> <span class="st">&#39;red&#39;</span>)</span></code></pre></div>
+<p>Теперь на графике появились не только синие крестики, но и красные точки:</p>
+<p><img src="images/test_correlation_points.png" /></p>
+<p>После этого используйте функцию <code>Calibrate()</code>, чтобы откалибрировать полученные точки:</p>
+<div class="sourceCode" id="cb649"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb649-1"><a href="работа-статистического-детектива.html#cb649-1" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">Calibrate</span>(data.points, calibration, </span>
+<span id="cb649-2"><a href="работа-статистического-детектива.html#cb649-2" aria-hidden="true" tabindex="-1"></a>                <span class="dv">15</span>, <span class="co"># минимум по оси x</span></span>
+<span id="cb649-3"><a href="работа-статистического-детектива.html#cb649-3" aria-hidden="true" tabindex="-1"></a>                <span class="dv">60</span>, <span class="co"># максимум по оси x</span></span>
+<span id="cb649-4"><a href="работа-статистического-детектива.html#cb649-4" aria-hidden="true" tabindex="-1"></a>                <span class="dv">20</span>, <span class="co"># минимум по оси y</span></span>
+<span id="cb649-5"><a href="работа-статистического-детектива.html#cb649-5" aria-hidden="true" tabindex="-1"></a>                <span class="dv">60</span>) <span class="co"># максимум по оси y</span></span></code></pre></div>
+<p>Давайте проверим, как точки соотносятся с оригиналом:</p>
+<div class="sourceCode" id="cb650"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb650-1"><a href="работа-статистического-детектива.html#cb650-1" aria-hidden="true" tabindex="-1"></a>df<span class="sc">$</span>type <span class="ot">&lt;-</span> <span class="st">&quot;obtained&quot;</span></span>
+<span id="cb650-2"><a href="работа-статистического-детектива.html#cb650-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb650-3"><a href="работа-статистического-детектива.html#cb650-3" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">42</span>)</span>
+<span id="cb650-4"><a href="работа-статистического-детектива.html#cb650-4" aria-hidden="true" tabindex="-1"></a><span class="fu">tibble</span>(<span class="at">x =</span> <span class="fu">rnorm</span>(<span class="dv">20</span>, <span class="at">mean =</span> <span class="dv">40</span>, <span class="at">sd =</span> <span class="dv">10</span>),</span>
+<span id="cb650-5"><a href="работа-статистического-детектива.html#cb650-5" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> x <span class="sc">+</span> <span class="fu">rnorm</span>(<span class="dv">20</span>, <span class="at">mean =</span> <span class="dv">0</span>, <span class="at">sd =</span> <span class="dv">5</span>),</span>
+<span id="cb650-6"><a href="работа-статистического-детектива.html#cb650-6" aria-hidden="true" tabindex="-1"></a>       <span class="at">type =</span> <span class="st">&quot;original&quot;</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb650-7"><a href="работа-статистического-детектива.html#cb650-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">bind_rows</span>(df) <span class="sc">%&gt;%</span> </span>
+<span id="cb650-8"><a href="работа-статистического-детектива.html#cb650-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(x, y, <span class="at">color =</span> type))<span class="sc">+</span></span>
+<span id="cb650-9"><a href="работа-статистического-детектива.html#cb650-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()</span></code></pre></div>
+<p><img src="DS_for_DH_files/figure-html/unnamed-chunk-410-1.png" width="672" /></p>
+<p>Результат достаточно близкий, давайте теперь проверим коэффициент корреляции:</p>
+<div class="sourceCode" id="cb651"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb651-1"><a href="работа-статистического-детектива.html#cb651-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cor</span>(df<span class="sc">$</span>x, df<span class="sc">$</span>y)</span></code></pre></div>
+<pre><code>[1] 0.9522989</code></pre>
+<p>И вот мы выяснили, что коэффициент корреляции Пирсона на этих данных равен <code>0.95</code>, что отличается от заявленных <code>0.92</code>.</p>
+<p>У этого метода, конечно, есть очевидные недостатки:</p>
+<ul>
+<li>при большом количестве точек метод становится слишком трудоемким;</li>
+<li>сам процесс тыкания плохо верефицируем, исследователь может случайно ткнуть два раза на одну точку или отметить два раза группу точек, потому что ему показалось, что раньше он эту группу не отмечал;</li>
+<li>даже при маленьком количестве точек мы не можем заметить случаи, когда значения совпадают или слишком похожи. Т. е. в оригинальных данных может быть две точки, а детектив поставит лишь одну;</li>
+<li>если Ваше изображение повернуто, то результаты может получиться неправильный.</li>
+</ul>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="корреляция-и-регрессия.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="ссылки-на-литературу.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": false,
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/agricolamz/2021_2022_ds4dh/edit/master/14-statistical-detective.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["DS_for_DH.pdf", "DS_for_DH.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "section"
+},
+"self_contained": true
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
